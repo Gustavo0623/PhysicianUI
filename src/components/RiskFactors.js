@@ -78,7 +78,7 @@ function RiskFactors ({riskFactors, imageDetails, questionDetails, responseDetai
                                         filteredQuestions[riskIndex].map((question, questionIndex) => (
                                             <div className="riskQuestionBox" key={questionIndex}>
                                                 <p className='question'><b>{questionIndex + 1}.</b> {question}</p>
-                                                <p className='questionResponse'><b>Response:</b> {filteredResponses[riskIndex][questionIndex]}</p>
+                                                <p className='questionResponse'><b>Response:</b> {filteredResponses[riskIndex][questionIndex] ? filteredResponses[riskIndex][questionIndex] : 'N/A'}</p>
                                             </div>
                                         )) 
                                     : <Loading/>

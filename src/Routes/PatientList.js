@@ -3,6 +3,13 @@ import Icons from '../components/Icons'
 import Loading from '../components/Loading';
 import {Outlet, Link} from 'react-router-dom'
 
+// TODO: 
+// implement Following...
+// app.post("/updatePatient", (req, res) => {
+//     const { patientName, MRN, newData } = req.body
+// app.post("/deletePatient", (req, res) => {
+//     const { patientName, MRN } = req.body
+
 function PatientList ({setCurrentUser}) {
     const [selectedOption, setSelectedOption] = useState('');
     const [patientData, setPatientData] = useState(null);
@@ -90,10 +97,10 @@ function PatientList ({setCurrentUser}) {
                     <Link className='userFlexBlock' onClick={() => {
                         setCurrentUser(user);
                         }} 
-                        to={`./${user.MRN}`}
+                        to={`./${user.patientInformation}`}
                     >
                         <p className='userName'>{user.patientName}</p>
-                        <p className='userMRN'>{user.MRN}</p>
+                        <p className='userMRN'>{user.patientInformation ? user.patientInformation : 'N/A'}</p>
                         <Icons iconDetails={user.riskFactors}/>
                     </Link>
                 </div>

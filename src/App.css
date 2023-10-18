@@ -205,7 +205,7 @@ body{
 
 #patientsText{
   width: calc(100% - 2.5em);
-  margin: .5rem auto;
+  margin: 2rem auto .5rem;
   text-align: left;
 }
 .name {
@@ -217,14 +217,15 @@ body{
   font-size: 14px;
   color: #909192;
 }
-.mrn, .riskResults {
+.patientInformation, .riskResults {
   color: #6B707B;
   font-size: 14px;
   font-weight: 400;
 }
 
-.mrn {
+.patientInformation {
   margin: 0 0 1em;
+  text-transform: capitalize;
 }
 
 .riskResults {

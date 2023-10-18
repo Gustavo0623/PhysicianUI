@@ -12,6 +12,7 @@ function Patient ({currentUser}) {
     const imageDescriptions = ['Food Security', 'Housing Security', 'Transportation Security', 'Interpersonal Safety', 'Suicide', 'Depression', 'Emotional Health', 'Substance Use']
 
     // Assessment and Care Plan state variables
+    const patientInfo = currentUser.questionnaireResponses
     const [assessmentState, setAssessmentState] = useState(false)
     const [carePlanState, setCarePlanState] = useState(false)
     const [resources, setResources] = useState(null)
@@ -83,14 +84,20 @@ function Patient ({currentUser}) {
         )
     }
 
+    console.log(patientInfo)
     return (
         <div className='patientPage'> 
             <BackButton/>
             <div id="patientDetailBox">
                 <p className='patientDetailsText'>PATIENT DETAILS</p>
                 <div className="assessmentIcons">
-                    <h1 className='name'>{currentUser.name}</h1>
-                    <h2 className="mrn">MRN: {currentUser.MRN}</h2>
+                    <h1 className='name'>{currentUser.patientName}</h1>
+                    <div className='patient'>
+                        <h2 className="patientInformation">MRN: {currentUser.MRN}</h2>
+                        <h2 className='patientInformation'>Age: {patientInfo.patientAge}</h2>
+                        <h2 className='patientInformation'>Gender: {patientInfo.patientGender}</h2>
+                        <h2 className='patientInformation'>DOB: {patientInfo.patientDOB}</h2>
+                    </div>
                     { currentUser ? <PatientInfo iconDetails={currentUser.riskFactors} imageDetails={[imageURL, imageDescriptions]}/> : null }
                 </div>
             </div>
