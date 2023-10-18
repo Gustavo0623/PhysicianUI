@@ -1,0 +1,593 @@
+body{
+  background-color: #F9F9FA;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Start App Styles */
+.green {
+  background-color: #4caf50;
+}
+
+.yellow {
+  background-color: #ecb141;
+}
+
+.red {
+  background-color: #d24f4b;
+}
+
+#userBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+  gap: .5em;
+  padding: 1em 2em;
+  background-color: #ffffff;
+  margin: 1em 2.5rem;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.userDetails {
+  min-width: 400px;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin: 0;
+  border-bottom: 2px solid #f9f9fa;
+}
+
+.userDetails:last-child {
+  border-bottom: none;
+}
+.userFlexBlock{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+
+.iconContainer {
+  display: flex;
+  flex: 5;
+  justify-content: flex-start;
+  align-items: center;
+  gap:.5em;
+}
+
+.smallIcon{
+  width: 20px;
+  filter: invert(100%)
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  padding: .5em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expansion{
+  display: flex;
+  justify-content: flex-start;
+  gap: .5em;
+  margin-bottom: 1rem;
+}
+
+.detailGroup{
+  display: flex;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.detail {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+.userName, .userMRN{
+  margin: auto;
+  text-align: left;
+}
+
+.userName {
+  flex: 3;
+}
+
+.userMRN{
+  flex: 3;
+}
+
+.patientPage {
+  width: calc(100% - 5em);
+  margin: auto;
+  
+}
+
+.titleBox {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 400px;
+  padding: 1rem 0;
+  margin: 0;
+  gap: 1rem;
+  flex-direction: row;
+  font-weight: bold;
+}
+
+#bodyBracket{	
+  background-color: #f9f9fa;
+  min-height: 98vh;
+}
+
+#patientListHeader {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - 5em);
+  margin: .5rem auto;
+  justify-content: space-between;
+  gap: .5rem;
+  align-items: center;
+}
+#result {
+  flex-grow: 4;
+  flex-basis: 200px;
+}
+
+#filterBox{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 450px;
+  gap: 1rem;
+}
+
+#dropdownArrow {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Adjust the right position as needed */
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000; /* Change color as needed */
+  pointer-events: none;
+  z-index: 2;
+}
+
+#patientsText{
+  width: calc(100% - 2.5em);
+  margin: .5rem auto;
+  text-align: left;
+}
+.name {
+  font-size: 20px;
+  margin: 1em 0 .5em;
+}
+.patientDetailsText {
+  margin: 1em 0 0;
+  font-size: 14px;
+  color: #909192;
+}
+.mrn, .riskResults {
+  color: #6B707B;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.mrn {
+  margin: 0 0 1em;
+}
+
+.riskResults {
+  margin: 10px 0;
+}
+#numResults, .filter{	
+  text-align: left;
+  color: #6c6a72;
+  margin: auto;
+}
+
+.filter {
+  border: 1.5px solid #f0f0f2;
+}
+
+#select {
+  position: relative;
+  border: 1.5px solid #f0f0f2;
+  background-color: #ffffff;
+  height: 32px;
+  flex-grow: 3;
+  flex-basis: 300px;
+  border-radius: 6px;
+}
+#patientFilterSelect{
+  appearance: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 0 1em;
+  border-radius: 6px;
+}
+
+
+#newButton{	
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  padding: .5em 0;
+  border-radius: 6px;
+  flex-grow: 1;
+  flex-basis: 100px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #212254;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#newButton:hover {
+  padding: calc(.5em - 2px) 0;
+  flex-basis: 96px;
+  background-color: #ffffff;
+  color: #212254;
+  border: 2px solid #212254
+}
+#nameText{
+  text-align: left;
+  flex: 3;
+}
+#MRNText{	
+  text-align: left;
+  flex: 3;
+}
+#riskText{	
+  text-align: left;
+  flex: 5;
+  min-width: 212px;
+}
+.returnBox {
+  width: 100%
+}
+.backButton {
+  position: relative;
+  background-color: transparent;
+  padding: 0 0 0 1.5em;
+  margin-top: 1rem;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.backButton::before {
+  content: '';
+  position: absolute;
+  border-top: 3px solid #000;
+  width: 14px; 
+  left: 0;
+  bottom: 13px;
+  rotate: 135deg;
+}
+
+.backButton::after {
+  content: '';
+  position: absolute;
+  border-top: 3px solid #000;
+  width: 14px; 
+  left: 0;
+  bottom: 5px;
+  rotate: 45deg;
+}
+.buttonBar{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  overflow: hidden;
+  margin-bottom: 2em;
+}
+.buttonBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropText {
+  margin: 0;
+  font-size: 12px;
+  padding-left: 5rem;
+  line-height: 25px;
+}
+.dropButton{
+  position: relative;
+  color: #6B707B;
+  background-color: white;
+  text-align: left;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 1em 0;
+}
+.active {
+  border-bottom: 2px solid #f1f2f4;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+}
+
+.buttonBox:first-child {
+  margin-top: 1em;
+}
+
+.buttonBox:last-child {
+  margin-bottom: 1em;
+}
+.arrowBG, .arrowUp {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border-radius: 100%;
+  background-color: #f1f2f4;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.arrowBG::before, .arrowUp::before{
+  content: '';
+  position: absolute;
+  border-top: 2px solid #6B707B;
+  width: 10px; 
+  top: 47.5%;
+  right:42%;
+  z-index: 1;
+  transition: all 0.25s ease-in;
+}
+
+
+.arrowBG::after, .arrowUp::after {
+  content: '';
+  position: absolute;
+  border-top: 2px solid #6B707B;
+  width: 10px; 
+  top: 47.5%;
+  left: 42%;
+  transition: all 0.25s ease-in;
+}
+
+.arrowBG::before {
+  rotate: 45deg;
+}
+
+.arrowUp::before {
+  rotate: 135deg;
+}
+.arrowUp::after {
+  rotate: 225deg;
+}
+
+.arrowBG::after {
+  rotate: 315deg;
+}
+
+
+.assessmentIcons{
+  background-color: white;
+}
+#patientDetailBox{
+  margin: 1rem 0 2em;
+  border-radius: 8px;
+  padding: 2em;
+  background-color: white;
+}
+.header {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.riskBoxContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2em;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.riskBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f9f9fa;;
+}
+
+.riskBox:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.largeIcon {
+  width: 45px;
+  height: 45px;
+} 
+.riskImageBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  border-radius: 100%;
+  padding: .5em;
+  border: 2px solid black;
+}
+.riskDescriptionBox {
+  display: flex;
+  gap: .5rem;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.riskDescriptionText {
+  margin: 1em 0;
+  text-transform: capitalize;
+}
+
+.riskQuestionBox {
+  border-bottom: 2px solid #f1f2f4;
+}
+.riskQuestionBox:last-child {
+  border-bottom: none;
+}
+.riskBox:last-child > .riskDescriptionBox > .riskQuestionBox:last-child > .questionResponse {
+  margin: 1em 0 0 0;
+}
+
+/* Asssessment Component */
+.assessment {
+  padding: 2em;
+  border-radius: 0 0 8px 8px;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 
+    repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
+}
+
+.questionBox {
+  border: 2px solid #f1f2f4;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding: 1em
+}
+
+.response {
+  border-top: 2px solid #f1f2f4;
+  margin: 0;
+  padding: 1em 0 0 0;
+}
+
+.question {
+  margin: 0 0 1em 0;
+  text-align: justify;
+}
+
+/* CarePlan Component */
+
+.carePlan {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 2em;
+  margin: 3rem 0;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+.risk {
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 1em;
+  border-bottom: 2px solid #f1f2f4;
+}
+
+.resourceBox {
+  border: 2px solid #f1f2f4;
+  text-transform: capitalize;
+  border-radius: 8px;
+  padding: 1em;
+  flex-grow: 1;
+  flex-basis: 400px;
+}
+
+.resourceDetailBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0 1em;
+}
+
+.resourceDetails {
+  border-bottom: 2px solid #f1f2f4;
+  text-transform: capitalize;
+}
+
+.resourceDetails:last-child {
+  border-bottom: none;
+}
+
+.resourceDetails:last-child > .resourceDetail:last-child {
+  margin: 1em 0 0 0;
+}
+
+/* Loading */
+#loadingBox {
+  margin: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+}
+#loading {
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  margin: 2rem auto;
+  border: 5px solid transparent;
+  border-top: 5px solid #212254;
+  border-bottom: 5px solid #212254;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
