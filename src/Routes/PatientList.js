@@ -79,7 +79,7 @@ function PatientList ({setCurrentUser}) {
                             <option value="option3">Option 3</option>
                         </select>
                     </div>
-                    <a href='http://160.94.179.166:2270/' id="newButton">New</a>
+                    <a href='http://160.94.179.166:2270/questionnaire/index.html' id="newButton">New</a>
                 </div>
             </div>
 
