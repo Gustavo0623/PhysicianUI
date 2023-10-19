@@ -91,3 +91,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 "https://www.flaticon.com/free-icons/frown" Frown icons created by rukanicon - Flaticon
 
 "https://www.flaticon.com/free-icons/pills" Pills icons created by ghost_icon - Flaticon
+
+"https://www.flaticon.com/free-icons/pencil" Pencil icons created by Freepik - Flaticon
+
+"https://www.flaticon.com/free-icons/trash" Trash icons created by Freepik - Flaticon
