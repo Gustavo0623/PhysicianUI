@@ -126,6 +126,7 @@ function Patient ({currentUser}) {
                 </div>
             </div>
             <RiskFactors riskFactors={currentUser.riskFactors} imageDetails={[imageURL, descriptions]} questionDetails={questionsArray} responseDetails={Object.values(currentUser.questionnaireResponses)}/>
+            <p className='header'>Resources</p>
             <Resource riskFactors={currentUser.riskFactors} resources={resources.return}/>
         </div>
 
