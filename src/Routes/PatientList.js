@@ -96,6 +96,7 @@ function PatientList ({setCurrentUser}) {
                     
                     <Link className='userFlexBlock' onClick={() => {
                         setCurrentUser(user);
+                        console.log(user)
                         }} 
                         to={`./${user.patientInformation}`}
                     >

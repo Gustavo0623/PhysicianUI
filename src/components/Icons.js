@@ -4,7 +4,7 @@ import React from 'react'
 function Icons ({iconDetails}) {
 
     const imageURL = ['images/drink.png', 'images/home.png', 'images/car.png', 'images/shield.png', 'images/lifeline.png', 'images/sad.png', 'images/heart.png', 'images/pills-bottle.png', ]
-    const imageDescriptions = ['Food Security', 'Housing/Utilities Security', 'Transportation Security', 'Interpersonal Safety', 'Suicide', 'Depression', 'Emotional Health', 'Substance Use']
+    const descriptions = ['Food Security', 'Housing/Utilities Security', 'Transportation Security', 'Interpersonal Safety', 'Suicide', 'Depression', 'Emotional Health', 'Substance Use']
 
     const patientData = Object.values(iconDetails)
     // function that will determine the className of each icon to determine the color depending on the iconDetails prop value that will change with every user
@@ -17,6 +17,7 @@ function Icons ({iconDetails}) {
         } else 
         return 'icon red'
     }
+    console.log(patientData)
 
     return (
 
@@ -27,7 +28,7 @@ function Icons ({iconDetails}) {
                     detail !== 'low' ? 
                     <div className='detailGroup' key={index}>
                         <div className={setClass(detail)}>
-                            <img className='smallIcon' src={imageURL[index]} alt={imageDescriptions[index]}/>
+                            <img className='smallIcon' src={imageURL[index]} alt={descriptions[index]}/>
                         </div>
                     </div>
                     : null

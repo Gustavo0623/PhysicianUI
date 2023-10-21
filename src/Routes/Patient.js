@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Assessment from "../components/Assessment";
 import BackButton from "../components/BackBtn";
-import CarePlan from "../components/CarePlan";
+import Resource from "../components/Resource";
 import Loading from "../components/Loading";
 import PatientInfo from "../components/PatientInfo";
 import RiskFactors from "../components/RiskFactors";
@@ -9,7 +9,7 @@ import RiskFactors from "../components/RiskFactors";
 function Patient ({currentUser}) {
     // Icon data
     const imageURL = ['../images/drink.png', '../images/home.png', '../images/car.png', '../images/shield.png', '../images/lifeline.png', '../images/sad.png', '../images/heart.png', '../images/pills-bottle.png', ]
-    const imageDescriptions = ['Food Security', 'Housing Security', 'Transportation Security', 'Interpersonal Safety', 'Suicide', 'Depression', 'Emotional Health', 'Substance Use']
+    const descriptions = ['Food Security', 'Housing Security', 'Transportation Security', 'Interpersonal Safety', 'Suicide', 'Depression', 'Emotional Health', 'Substance Use']
 
     // Assessment and Care Plan state variables
     const patientInfo = currentUser.questionnaireResponses
@@ -84,7 +84,6 @@ function Patient ({currentUser}) {
         )
     }
 
-    console.log(patientInfo)
     return (
         <div className='patientPage'> 
             <BackButton/>
@@ -98,7 +97,7 @@ function Patient ({currentUser}) {
                         <h2 className='patientInformation'>Gender: {patientInfo.patientGender}</h2>
                         <h2 className='patientInformation'>DOB: {patientInfo.patientDOB}</h2>
                     </div>
-                    { currentUser ? <PatientInfo iconDetails={currentUser.riskFactors} imageDetails={[imageURL, imageDescriptions]}/> : null }
+                    { currentUser ? <PatientInfo iconDetails={currentUser.riskFactors} imageDetails={[imageURL, descriptions]}/> : null }
                 </div>
             </div>
             <div className="buttonBar">
@@ -112,7 +111,7 @@ function Patient ({currentUser}) {
                         <span className={!assessmentState ? "arrowBG" : "arrowUp"}></span>
                         <p className="dropText">Psychosocial Assessment</p> 
                     </button>
-                    {assessmentState ? <Assessment currentUser={currentUser} questionDetails={questionsArray}/> : null}
+                    {assessmentState ? <Assessment currentUser={currentUser} questionDetails={questionsArray} headers={descriptions}/> : null}
                 </div>
                 <div className='buttonBox'>
                     <button className={!carePlanState ? "dropButton" : "dropButton active"} onClick={() => {
@@ -126,8 +125,8 @@ function Patient ({currentUser}) {
                     </button>
                 </div>
             </div>
-            <RiskFactors riskFactors={currentUser.riskFactors} imageDetails={[imageURL, imageDescriptions]} questionDetails={questionsArray} responseDetails={Object.values(currentUser.questionnaireResponses)}/>
-            <CarePlan riskFactors={currentUser.riskFactors} resources={resources.return}/>
+            <RiskFactors riskFactors={currentUser.riskFactors} imageDetails={[imageURL, descriptions]} questionDetails={questionsArray} responseDetails={Object.values(currentUser.questionnaireResponses)}/>
+            <Resource riskFactors={currentUser.riskFactors} resources={resources.return}/>
         </div>
 
     )

@@ -1,23 +1,22 @@
 import React from "react";
 
-// CarePlan details Component
-function CarePlan ({riskFactors, resources}) {
+// Resource details Component
+function Resource ({riskFactors, resources}) {
     
     const riskFactorValue = Object.values(riskFactors)
     const risk = Object.keys(resources)
     const resourceDetails = Object.values(resources)
-    // Set variable to hold the patient CarePlan data
+    // Set variable to hold the patient Resource data
 
     return (
-        <div className='carePlan'>
+        <div className='Resource'>
             {riskFactorValue.map((value, index)=> (
                 value !== 'low' ?
                     <div className='resourceBox' key={index}>
-                        <p className='risk'>{risk[index]}</p>
+                        <p className='risk header'>{risk[index]}</p>
                         <div className='resourceDetailBox'>
                             {resourceDetails[index].map((resource, index) => (
                                 <div className='resourceDetails' key={index}>
-                                    <p className='resourceDetail'><strong>Type:</strong> {resource.type}</p>
                                     <p className='resourceDetail'><strong>Name:</strong> {resource.name}</p>
                                     <p className='resourceDetail'><strong>Address:</strong> {resource.address}</p>
                                 </div>
@@ -31,4 +30,4 @@ function CarePlan ({riskFactors, resources}) {
     )
 }
 
-export default CarePlan
+export default Resource

@@ -5,7 +5,7 @@ function RiskFactors ({riskFactors, imageDetails, questionDetails, responseDetai
     
     const riskAlerts = Object.values(riskFactors)
     const imageURL = imageDetails[0]
-    const imageDescriptions = imageDetails[1]
+    const descriptions = imageDetails[1]
     // Arrange questions arrays
 
     const [questionsArray, setQuestionsArray] = useState([])
@@ -25,7 +25,7 @@ function RiskFactors ({riskFactors, imageDetails, questionDetails, responseDetai
 
     useEffect(()=> {
         setArray(setQuestionsArray, questionDetails)
-        setArray(setResponseArray, responseDetails.slice(2))
+        setArray(setResponseArray, responseDetails.slice(5))
     }, [questionDetails, responseDetails])
 
 
@@ -41,7 +41,7 @@ function RiskFactors ({riskFactors, imageDetails, questionDetails, responseDetai
             if (riskAlerts[i] !== 'low') {
                 filteredRiskAlerts.push(riskAlerts[i]);
                 filteredURLs.push(imageURL[i]);
-                filteredDescriptions.push(imageDescriptions[i]);
+                filteredDescriptions.push(descriptions[i]);
                 filteredQuestions.push(questionsArray[i])
                 filteredResponses.push(responseArray[i])
             }

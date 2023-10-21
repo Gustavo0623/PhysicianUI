@@ -16,7 +16,7 @@ function PatientInfo ({iconDetails, imageDetails}) {
     }
 
     const imageURL = imageDetails[0]
-    const imageDescriptions = imageDetails[1]
+    const descriptions = imageDetails[1]
     
     return (
 
@@ -26,7 +26,7 @@ function PatientInfo ({iconDetails, imageDetails}) {
                     detail !== 'low' ? 
                     <div className='detailGroup' key={index}>
                         <div className={setClass(detail)}>
-                            <img className='smallIcon' src={imageURL[index]} alt={imageDescriptions[index]}/>
+                            <img className='smallIcon' src={imageURL[index]} alt={descriptions[index]}/>
                         </div>
                     </div>
                     : null
