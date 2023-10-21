@@ -67,11 +67,13 @@ function RiskFactors ({riskFactors, imageDetails, questionDetails, responseDetai
                     filteredRiskAlerts.map((risk, riskIndex) => (
                         
                         <div className='riskBox' key={riskIndex}>
-                            <div className={setClass(risk)}>
-                                <img className='largeIcon' src={filteredURLs[riskIndex]} alt={filteredDescriptions[riskIndex]}/>
+                            <div className='iconHeader'>
+                                <div className={setClass(risk)}>
+                                    <img className='largeIcon' src={filteredURLs[riskIndex]} alt={filteredDescriptions[riskIndex]}/>
+                                </div>
+                                <p className='header'>{filteredDescriptions[riskIndex]}</p>
                             </div>
                             <div className='riskDescriptionBox'>
-                                <p className='header'>{filteredDescriptions[riskIndex]}</p>
                                 <p className='riskDescriptionText'><b>Risk:</b> { risk }</p>
                                 {
                                     filteredQuestions[riskIndex] ? 

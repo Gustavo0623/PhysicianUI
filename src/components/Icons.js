@@ -17,7 +17,6 @@ function Icons ({iconDetails}) {
         } else 
         return 'icon red'
     }
-    console.log(patientData)
 
     return (
 
