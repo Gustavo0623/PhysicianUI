@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Patient from './Routes/Patient';
 import PatientList from './Routes/PatientList';
 
@@ -17,6 +17,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* TODO: Add Landing Page Route */}
+          <Route path="/" element={<Navigate to="/patients" />} />
           <Route exact path='/patients' element={ <PatientList currentUser={currentUser} setCurrentUser={setCurrentUser}/> }></Route>
           <Route exact path='/patients/:patientMRN' element={ <Patient currentUser={currentUser}/> }></Route>
         </Routes>

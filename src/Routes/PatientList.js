@@ -2,13 +2,9 @@ import React, {useState, useEffect} from 'react'
 import Icons from '../components/Icons'
 import Loading from '../components/Loading';
 import {Outlet, Link} from 'react-router-dom'
+import Modify from '../components/Modify';
 
 // TODO: 
-// implement Following...
-// app.post("/updatePatient", (req, res) => {
-//     const { patientName, MRN, newData } = req.body
-// app.post("/deletePatient", (req, res) => {
-//     const { patientName, MRN } = req.body
 
 function PatientList ({setCurrentUser}) {
     const [selectedOption, setSelectedOption] = useState('');
@@ -97,12 +93,14 @@ function PatientList ({setCurrentUser}) {
                     <Link className='userFlexBlock' onClick={() => {
                         setCurrentUser(user);
                         }} 
-                        to={`./${user.patientInformation}`}
+                        to={`./${user.MRN}`}
                     >
                         <p className='userName'>{user.patientName}</p>
-                        <p className='userMRN'>{user.patientInformation ? user.patientInformation : 'N/A'}</p>
+                        <p className='userMRN'>{user.MRN ? user.MRN : 'N/A'}</p>
                         <Icons iconDetails={user.riskFactors}/>
                     </Link>
+
+                    <Modify currentUser={user} setUser={setCurrentUser}/>
                 </div>
             ))}
             </div>

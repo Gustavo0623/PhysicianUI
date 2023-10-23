@@ -65,6 +65,7 @@ body{
 }
 
 .userDetails {
+  display: flex;
   min-width: 400px;
   width: 100%;
   gap: 1rem;
@@ -85,6 +86,7 @@ body{
   cursor: pointer;
   text-decoration: none;
   color: black;
+  flex: 1;
 }
 
 
@@ -620,6 +622,60 @@ body{
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.delete, .edit {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all .025s linear;
+}
+
+.delete {
+  background-color: #d24f4b;
+}
+
+.edit {
+  background-color: #ecb141;
+}
+
+.delete:hover {
+  background-color: #d24f4b;
+}
+
+.edit:hover {
+  background-color: #ecb141;
+}
+
+.delete:hover, .edit:hover {
+  border-radius: 6px;
+}
+
+.delete:hover .modifyIcons {
+  filter: invert(100%);
+}
+
+.edit:hover .modifyIcons {
+  filter: invert(100%);
+}
+
+.modifyBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+
+.modifyIcons {
+  width: 20px
 }
 
 /* For screens smaller than 768px (XS and SM devices) */

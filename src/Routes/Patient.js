@@ -84,6 +84,8 @@ function Patient ({currentUser}) {
         )
     }
 
+    console.log(resources)
+
     return (
         <div className='patientPage'> 
             <BackButton/>
