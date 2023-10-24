@@ -84,7 +84,7 @@ function Patient ({currentUser}) {
         )
     }
 
-    console.log(resources)
+    console.log(currentUser)
 
     return (
         <div className='patientPage'> 
