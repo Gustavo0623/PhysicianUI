@@ -6,13 +6,12 @@ import Loading from "../components/Loading";
 import PatientInfo from "../components/PatientInfo";
 import RiskFactors from "../components/RiskFactors";
 
-function Patient ({currentUser}) {
+function Patient ({currentUser, edit, setEdit}) {
     // Icon data
     const imageURL = ['../images/drink.png', '../images/home.png', '../images/car.png', '../images/shield.png', '../images/lifeline.png', '../images/sad.png', '../images/heart.png', '../images/pills-bottle.png', ]
     const descriptions = ['Food Security', 'Housing Security', 'Transportation Security', 'Interpersonal Safety', 'Suicide', 'Depression', 'Emotional Health', 'Substance Use']
 
     // Assessment and Care Plan state variables
-    const patientInfo = currentUser.questionnaireResponses
     const [assessmentState, setAssessmentState] = useState(false)
     const [carePlanState, setCarePlanState] = useState(false)
     const [resources, setResources] = useState(null)
@@ -84,7 +83,10 @@ function Patient ({currentUser}) {
         )
     }
 
+    const patientInfo = currentUser.questionnaireResponses
+
     console.log(currentUser)
+    console.log(edit)
 
     return (
         <div className='patientPage'> 
@@ -92,13 +94,24 @@ function Patient ({currentUser}) {
             <div id="patientDetailBox">
                 <p className='patientDetailsText'>PATIENT DETAILS</p>
                 <div className="assessmentIcons">
-                    <h1 className='name'>{currentUser.patientName}</h1>
-                    <div className='patient'>
-                        <h2 className="patientInformation">MRN: {currentUser.MRN}</h2>
-                        <h2 className='patientInformation'>Age: {patientInfo.patientAge}</h2>
-                        <h2 className='patientInformation'>Gender: {patientInfo.patientGender}</h2>
-                        <h2 className='patientInformation'>DOB: {patientInfo.patientDOB}</h2>
-                    </div>
+                    { !edit ? <h1 className='name'>{currentUser.patientName}</h1> : <input aria-label='Name' type='text' defaultValue={currentUser.patientName} className='name'></input>}
+                    { !edit ? 
+                    (
+                        <div className='patient'>
+                            <h2 className="patientInformation">MRN: {currentUser.MRN}</h2>
+                            <h2 className='patientInformation'>Age: {patientInfo.patientAge}</h2>
+                            <h2 className='patientInformation'>Gender: {patientInfo.patientGender}</h2>
+                            <h2 className='patientInformation'>DOB: {patientInfo.patientDOB}</h2>
+                        </div>
+                    ) : 
+                    (
+                        <div className='patient'>
+                            <h2 className="patientInformation">MRN: {currentUser.MRN}</h2>
+                            <input type="number" defaultValue={patientInfo.patientAge} className='patientInformation'></input>
+                            <h2 className='patientInformation'>Gender: {patientInfo.patientGender}</h2>
+                            <h2 className='patientInformation'>DOB: {patientInfo.patientDOB}</h2>
+                        </div>
+                    )}
                     { currentUser ? <PatientInfo iconDetails={currentUser.riskFactors} imageDetails={[imageURL, descriptions]}/> : null }
                 </div>
             </div>

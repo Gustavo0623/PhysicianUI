@@ -6,7 +6,7 @@ import Modify from '../components/Modify';
 
 // TODO: 
 
-function PatientList ({setCurrentUser}) {
+function PatientList ({setCurrentUser, setEdit}) {
     const [selectedOption, setSelectedOption] = useState('');
     const [patientData, setPatientData] = useState(null);
     
@@ -38,15 +38,16 @@ function PatientList ({setCurrentUser}) {
 
     useEffect(() => {
         fetchData(); // Fetch data when the component is mounted
-        // next line disables error message
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    useEffect(() => {
+        setEdit(false)
+    }, [setEdit])
 
 
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
     };
-
 
     // TODO : edit loading screen while waiting for patient information
     if (!patientData) {
@@ -100,7 +101,7 @@ function PatientList ({setCurrentUser}) {
                         <Icons iconDetails={user.riskFactors}/>
                     </Link>
 
-                    <Modify currentUser={user} setUser={setCurrentUser}/>
+                    <Modify currentUser={user} setUser={setCurrentUser} setEdit={setEdit}/>
                 </div>
             ))}
             </div>

@@ -11,15 +11,16 @@ function App() {
   // depending on (Actual) data the values will be adjusted and gathered via fetch request to server.
   // let users = [['Lois Lane', [0, 0, 2, 1, 0, 2, 1, 0]], ['Mary Jane', [1 , 2, 0, 2, 2, 1, 2, 2]], ['Padme Amalda', [0, 2, 1, 0, 2, 1, 0, 2]], ['Christine Chapel', [2, 1, 0, 1, 1, 1, 1, 1]]]
   let [currentUser, setCurrentUser] = useState(null)
+  let [edit, setEdit] = useState(false)
 
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           {/* TODO: Add Landing Page Route */}
-          <Route path="/" element={<Navigate to="/patients" />} />
-          <Route exact path='/patients' element={ <PatientList currentUser={currentUser} setCurrentUser={setCurrentUser}/> }></Route>
-          <Route exact path='/patients/:patientMRN' element={ <Patient currentUser={currentUser}/> }></Route>
+          <Route path="/" element={ <Navigate to="/patients"/> } />
+          <Route exact path='/patients' element={ <PatientList setCurrentUser={setCurrentUser} setEdit={setEdit}/> }></Route>
+          <Route exact path='/patients/:patientMRN' element={ <Patient currentUser={currentUser} edit={edit} setEdit={setEdit}/> }></Route>
         </Routes>
       </BrowserRouter>
     </div>
