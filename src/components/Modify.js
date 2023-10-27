@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-function Modify({currentUser, setUser, setEdit}) {
+function Modify({currentUser, setUser, setEdit, fetchData}) {
 
     // app.post("/updatePatient", (req, res) => {
     //     const { patientName, MRN, newData } = req.body
@@ -10,10 +10,11 @@ function Modify({currentUser, setUser, setEdit}) {
 
     // TODO: fix fetch to delete
     async function deletePatient() {
+
         try {
             const MRNToDelete = currentUser.MRN;
-          
-            const response = await fetch(`http://160.94.179.166:2270/deletePatient`, {
+            // http://160.94.179.166/
+            const response = await fetch('http://160.94.179.166:2270/deletePatient', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -27,11 +28,12 @@ function Modify({currentUser, setUser, setEdit}) {
             if (!response.ok) {
               throw new Error('Failed to delete the patient');
             }
-          
             const data = await response.json();
             console.log(data.message); // Assuming the server sends a message upon successful deletion
+            fetchData()
         } catch (error) {
             console.error(error);
+            fetchData()
         }
     }
       
@@ -41,7 +43,7 @@ function Modify({currentUser, setUser, setEdit}) {
             <Link className='edit' onClick={() => {
                 setUser(currentUser)
                 setEdit(true)
-            }} to={`./${currentUser.MRN}`}>
+            }} to='../editPatient'>
                 <img src='../images/pencil.png' alt='pencil' className='modifyIcons'/>
             </Link>
             <button className='delete' onClick={() => {

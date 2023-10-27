@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Patient from './Routes/Patient';
 import PatientList from './Routes/PatientList';
+import EditPage from './Routes/EditPatient';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={ <Navigate to="/patients"/> } />
           <Route exact path='/patients' element={ <PatientList setCurrentUser={setCurrentUser} setEdit={setEdit}/> }></Route>
           <Route exact path='/patients/:patientMRN' element={ <Patient currentUser={currentUser} edit={edit} setEdit={setEdit}/> }></Route>
+          <Route exact path='/editPatient' element={ <EditPage currentUser={currentUser} setEdit={setEdit}/> }></Route>
         </Routes>
       </BrowserRouter>
     </div>

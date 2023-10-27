@@ -86,7 +86,6 @@ function Patient ({currentUser, edit, setEdit}) {
     const patientInfo = currentUser.questionnaireResponses
 
     console.log(currentUser)
-    console.log(edit)
 
     return (
         <div className='patientPage'> 

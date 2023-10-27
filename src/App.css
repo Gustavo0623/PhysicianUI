@@ -678,6 +678,18 @@ body{
   width: 20px
 }
 
+/* Edit Page */
+#editPage {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#myFrame{
+  height: 88vh;
+}
+
 /* For screens smaller than 768px (XS and SM devices) */
 @media (max-width: 767px) {
   /* CSS rules for small screens */

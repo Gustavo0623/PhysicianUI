@@ -53,11 +53,13 @@ function PatientList ({setCurrentUser, setEdit}) {
     if (!patientData) {
         return (
             
+            
         <div id='loadingBox'>
             <Loading/>
         </div>
         )
-    } else return (
+    }
+    return (
         <div id="bodyBracket">
             <h1 id="patientsText">Patients</h1>
             <div id="patientListHeader">
@@ -76,6 +78,7 @@ function PatientList ({setCurrentUser, setEdit}) {
                             <option value="option3">Option 3</option>
                         </select>
                     </div>
+                    {/* {http://160.94.179.166:2270/questionnaire/index.html} */}
                     <a href='http://160.94.179.166:2270/questionnaire/index.html' id="newButton">New</a>
                 </div>
             </div>
@@ -96,12 +99,12 @@ function PatientList ({setCurrentUser, setEdit}) {
                         }} 
                         to={`./${user.MRN}`}
                     >
-                        <p className='userName'>{user.patientName}</p>
+                        <p className='userName'>{user.patientName ? user.patientName: null}</p>
                         <p className='userMRN'>{user.MRN ? user.MRN : 'N/A'}</p>
-                        <Icons iconDetails={user.riskFactors}/>
+                        <Icons iconDetails={user.riskFactors ? user.riskFactors : null}/>
                     </Link>
 
-                    <Modify currentUser={user} setUser={setCurrentUser} setEdit={setEdit}/>
+                    <Modify currentUser={user} setUser={setCurrentUser} setEdit={setEdit} fetchData={fetchData} />
                 </div>
             ))}
             </div>
