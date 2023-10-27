@@ -49,15 +49,18 @@ function EditPage({currentUser, setEdit}) {
                 }
             });
 
-            name.defaultValue = currentUser.patientName
-            age.defaultValue = currentUser.questionnaireResponses.patientAge
-            gender.value = currentUser.questionnaireResponses.patientGender
-            dob.value = currentUser.questionnaireResponses.patientDOB
-            carePlanQ1.defaultValue = questionnaire[24] ? questionnaire[24].answer : ''
-            carePlanQ2.defaultValue = questionnaire[25] ? questionnaire[25].answer : ''
-            carePlanQ3.defaultValue = questionnaire[26] ? questionnaire[26].answer : ''
-            carePlanQ4.defaultValue = questionnaire[27] ? questionnaire[27].answer : ''
-            carePlanQ5.defaultValue = questionnaire[28] ? questionnaire[28].answer : ''
+            if (iframeDocument) {
+                name.defaultValue = currentUser.patientName
+                age.defaultValue = currentUser.questionnaireResponses.patientAge
+                gender.value = currentUser.questionnaireResponses.patientGender
+                dob.value = currentUser.questionnaireResponses.patientDOB
+                carePlanQ1.defaultValue = questionnaire[24] ? questionnaire[24].answer : ''
+                carePlanQ2.defaultValue = questionnaire[25] ? questionnaire[25].answer : ''
+                carePlanQ3.defaultValue = questionnaire[26] ? questionnaire[26].answer : ''
+                carePlanQ4.defaultValue = questionnaire[27] ? questionnaire[27].answer : ''
+                carePlanQ5.defaultValue = questionnaire[28] ? questionnaire[28].answer : ''
+            }
+
     
             // Add an event listener to the button
             button.addEventListener("click", function(event) {
