@@ -17,6 +17,7 @@ function EditPage({currentUser, setEdit}) {
         // Add a load event listener to the iframe
         iframe.addEventListener("load", function() {
             const iframeDocument = iframe.contentDocument;
+            console.log(iframeDocument)
     
             // Get a reference to the button inside the iframe
             const button = iframeDocument.querySelector('.btn.btn-primary');
@@ -49,18 +50,15 @@ function EditPage({currentUser, setEdit}) {
                 }
             });
 
-            if (iframeDocument) {
-                name.defaultValue = currentUser.patientName
-                age.defaultValue = currentUser.questionnaireResponses.patientAge
-                gender.value = currentUser.questionnaireResponses.patientGender
-                dob.value = currentUser.questionnaireResponses.patientDOB
-                carePlanQ1.defaultValue = questionnaire[24] ? questionnaire[24].answer : ''
-                carePlanQ2.defaultValue = questionnaire[25] ? questionnaire[25].answer : ''
-                carePlanQ3.defaultValue = questionnaire[26] ? questionnaire[26].answer : ''
-                carePlanQ4.defaultValue = questionnaire[27] ? questionnaire[27].answer : ''
-                carePlanQ5.defaultValue = questionnaire[28] ? questionnaire[28].answer : ''
-            }
-
+            name.value = currentUser.patientName
+            age.value = currentUser.questionnaireResponses.patientAge
+            gender.value = currentUser.questionnaireResponses.patientGender
+            dob.value = currentUser.questionnaireResponses.patientDOB
+            carePlanQ1.value = questionnaire[24] ? questionnaire[24].answer : ''
+            carePlanQ2.value = questionnaire[25] ? questionnaire[25].answer : ''
+            carePlanQ3.value = questionnaire[26] ? questionnaire[26].answer : ''
+            carePlanQ4.value = questionnaire[27] ? questionnaire[27].answer : ''
+            carePlanQ5.value = questionnaire[28] ? questionnaire[28].answer : ''
     
             // Add an event listener to the button
             button.addEventListener("click", function(event) {
