@@ -504,7 +504,7 @@ body{
 }
 
 /* Asssessment Component */
-.assessment {
+.assessment, .carePlan {
   padding: 2rem;
   border-radius: 0 0 8px 8px;
   background-color: #ffffff;
@@ -520,6 +520,10 @@ body{
 .assessmentCategory {
   padding: 0 1rem;
 }
+.assessmentCategory:last-child .questionBox, 
+.carePlanQuestionBox:last-child {
+  border-bottom: none;
+}
 
 .questionBox {
   display: flex;
@@ -528,6 +532,11 @@ body{
   justify-content: space-between;
   padding: 1rem 0;
   margin: 0 2rem;
+  border-bottom: 2px solid #f1f2f4;
+}
+
+.carePlanQuestionBox {
+  padding: 1rem 0;
   border-bottom: 2px solid #f1f2f4;
 }
 
@@ -578,6 +587,10 @@ body{
   flex-grow: 1;
   flex-basis: 100%;
   border-bottom: 2px solid #f1f2f4;
+}
+
+.resourceBox:last-child {
+  border-bottom: none;
 }
 
 .resourceDetailBox {

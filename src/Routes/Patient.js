@@ -5,8 +5,13 @@ import Resource from "../components/Resource";
 import Loading from "../components/Loading";
 import PatientInfo from "../components/PatientInfo";
 import RiskFactors from "../components/RiskFactors";
+import Careplan from "../components/CarePlan";
 
 function Patient ({currentUser, edit, setEdit}) {
+
+    if (currentUser) {
+        console.log(currentUser)
+    }
     // Icon data
     const imageURL = ['../images/drink.png', '../images/home.png', '../images/car.png', '../images/shield.png', '../images/lifeline.png', '../images/sad.png', '../images/heart.png', '../images/pills-bottle.png', ]
     const descriptions = ['Food Security', 'Housing Security', 'Transportation Security', 'Interpersonal Safety', 'Suicide', 'Depression', 'Emotional Health', 'Substance Use']
@@ -40,6 +45,14 @@ function Patient ({currentUser, edit, setEdit}) {
         'How many times in the past 12 months have you used prescription drugs for non-medical reasons?', 
         'How many times in the past 12 months have you used illegal drugs?', 
         'How many times in the past 12 months have you used tobacco products (like cigarettes, cigars, snuff, chew, electronic cigarettes)?'
+    ]
+
+    const carePlanQuestions = [
+        'Have you experienced any harmful events with long-lasting effects on your overall health and wellbeing today that you would like the care team to know?',
+        'Are there behaviors, environmental factors, or information that triggers a trauma response or causes significant discomfort that you would like the care team to know?',
+        'What coping skills work well for you? What helps you manage your emotions in upsetting situations?',
+        'Who do you rely on, and if they are available, how can they assist you during this encounter?', 
+        'What are your strengths and what is something about you or something you have done that you are proud of?'
     ]
 
     async function fetchData() {
@@ -84,8 +97,6 @@ function Patient ({currentUser, edit, setEdit}) {
     }
 
     const patientInfo = currentUser.questionnaireResponses
-
-    console.log(currentUser)
 
     return (
         <div className='patientPage'> 
@@ -137,6 +148,7 @@ function Patient ({currentUser, edit, setEdit}) {
                         <span className={!carePlanState ? "arrowBG" : "arrowUp"}></span>
                         <p className="dropText">Trauma-Informed Care Plan</p>
                     </button>
+                    {carePlanState ? <Careplan currentUser={currentUser} questions={carePlanQuestions}/> : null}
                 </div>
             </div>
             <RiskFactors riskFactors={currentUser.riskFactors} imageDetails={[imageURL, descriptions]} questionDetails={questionsArray} responseDetails={Object.values(currentUser.questionnaireResponses)}/>

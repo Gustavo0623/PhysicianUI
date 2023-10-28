@@ -1,13 +1,25 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import BackButton from "../components/BackBtn";
 import Loading from "../components/Loading";
+import { useNavigate } from "react-router-dom";
 
-function EditPage({currentUser, setEdit}) {
+function EditPage({currentUser}) {
+    console.log(currentUser)
+
+    const navigate = useNavigate()
+    const [submit, setSubmit] = useState(false)
 
     useEffect(()=> {
 
+        // Create an object to store the selected values
+        const newPatientData = {};
+
         if (!currentUser) {
             return 
+        }
+
+        if (submit) {
+            navigate('../patients')
         }
 
         // Get a reference to the iframe
@@ -20,7 +32,6 @@ function EditPage({currentUser, setEdit}) {
             console.log(iframeDocument)
     
             // Get a reference to the button inside the iframe
-            const button = iframeDocument.querySelector('.btn.btn-primary');
             const name  = iframeDocument.getElementById('name')
             const age  = iframeDocument.getElementById('age')
             const gender = iframeDocument.getElementById('genderSelect')
@@ -50,24 +61,82 @@ function EditPage({currentUser, setEdit}) {
                 }
             });
 
-            name.value = currentUser.patientName
-            age.value = currentUser.questionnaireResponses.patientAge
+            name.defaultValue = currentUser.patientName
+            age.defaultValue = currentUser.questionnaireResponses.patientAge
             gender.value = currentUser.questionnaireResponses.patientGender
             dob.value = currentUser.questionnaireResponses.patientDOB
-            carePlanQ1.value = questionnaire[24] ? questionnaire[24].answer : ''
-            carePlanQ2.value = questionnaire[25] ? questionnaire[25].answer : ''
-            carePlanQ3.value = questionnaire[26] ? questionnaire[26].answer : ''
-            carePlanQ4.value = questionnaire[27] ? questionnaire[27].answer : ''
-            carePlanQ5.value = questionnaire[28] ? questionnaire[28].answer : ''
-    
-            // Add an event listener to the button
-            button.addEventListener("click", function(event) {
-            event.preventDefault(); // Prevent the default behavior
-            // Your event handling code here
-            alert("Button inside iframe was clicked!");
+            carePlanQ1.defaultValue = questionnaire[24] ? questionnaire[24].answer : null
+            carePlanQ2.defaultValue = questionnaire[25] ? questionnaire[25].answer : null
+            carePlanQ3.defaultValue = questionnaire[26] ? questionnaire[26].answer : null
+            carePlanQ4.defaultValue = questionnaire[27] ? questionnaire[27].answer : null
+            carePlanQ5.defaultValue = questionnaire[28] ? questionnaire[28].answer : null
+
+            // Get the form element by its ID (you should replace "yourFormId" with the actual ID)
+            const form = iframeDocument.getElementById("patientForm");
+
+            // Iterate through the form inputs and add event listeners
+            const formInputs = form.querySelectorAll("input, select, textarea");
+            formInputs.forEach((input) => {
+
+                if (
+                    input.name === 'command' ||
+                    input.name === 'patientName' || input.name === 'patientAge' || 
+                    input.name === 'patientGender' || input.name === 'patientDOB' ||
+                    input.name === '21. Have you experienced any harmful events with long-lasting effects on your overall health and wellbeing today that you would like the care team to know?' ||
+                    input.name === '22. Are there behaviors, environmental factors, or information that triggers a trauma response or causes significant discomfort that you would like the care team to know?' || 
+                    input.name === '23. What coping skills work well for you? What helps you manage your emotions in upsetting situations?' ||
+                    input.name === '24. Who do you rely on, and if they are available, how can they assist you during this encounter?' ||
+                    input.name === '25. What are your strengths and what is something about you or something you have done that you are proud of?'
+                ) {
+                    newPatientData[input.name] = input.value;
+                }
+
+                // Check if the input is already set to the default value
+                if (input.value === [input.defaultValue] || input.checked === true) {
+                    // If it's the default value, store the default in newPatientData
+                    newPatientData[input.name] = input.value;
+                }
+
+                input.addEventListener("change", function() {
+                    // Update the newPatientData object when input values change
+                    newPatientData[input.name] = input.value;
+                });
+            });
+
+            // Add a submit button event listener to capture the data
+            const submitButton = form.querySelector('#submitBtn');
+            submitButton.addEventListener("click", async function(event) {
+                event.preventDefault(); // Prevent the form from submitting
+                
+                // Use a try-catch block to handle potential errors
+                try {
+            
+                    // Make a PUT request to update the patient data
+                    const response = await fetch("http://160.94.179.166:2270/updatePatient", {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            patientName: currentUser.patientName,
+                            MRN: currentUser.MRN,
+                            questionnaireResponses: newPatientData,
+                        }),
+                    });
+                    console.log(response)
+                    console.log(newPatientData)
+                    setSubmit(true)
+                    
+                    if (!response.ok) {
+                        throw new Error("Failed to update patient data");
+                    }
+                } catch (error) {
+                    console.error(error);
+                    // Handle the error as needed, e.g., display an error message to the user
+                }
             });
         });
-    }, [currentUser])
+    }, [currentUser, navigate, submit])
 
     if (!currentUser) {
         return (
