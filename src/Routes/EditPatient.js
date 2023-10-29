@@ -29,12 +29,13 @@ function EditPage({currentUser}) {
         // Add a load event listener to the iframe
         iframe.addEventListener("load", function(event) {
 
-            const contentDisposition = event.target.src;
-            console.log(contentDisposition)
+            const contentTitle = event.target.contentDocument.title;
+            console.log(contentTitle)
             
-            if (contentDisposition === "index.html") {
+            if (contentTitle === "Vertex 360") {
                 // If the response content disposition is "index.html,"
                 // set the iframe's source to "questionnaire.html"
+                console.log('not working')
                 iframe.src = "/questionnaire.html";
                 event.preventDefault();
             }
