@@ -24,8 +24,11 @@ function EditPage({currentUser}) {
 
         // Get a reference to the iframe
         const iframe = document.getElementById("myFrame");
-    
-        iframe.addEventListener("beforeload", (event) => {
+        
+        
+        // Add a load event listener to the iframe
+        iframe.addEventListener("load", function(event) {
+
             const contentDisposition = event.target.contentDocument.contentType;
             console.log(contentDisposition)
             
@@ -35,11 +38,6 @@ function EditPage({currentUser}) {
                 iframe.src = "/questionnaire.html";
                 event.preventDefault();
             }
-        });
-        
-        
-        // Add a load event listener to the iframe
-        iframe.addEventListener("load", function() {
             const iframeDocument = iframe.contentDocument;
             console.log(iframeDocument)
     
