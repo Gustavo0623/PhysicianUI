@@ -24,6 +24,19 @@ function EditPage({currentUser}) {
 
         // Get a reference to the iframe
         const iframe = document.getElementById("myFrame");
+
+        iframe.addEventListener("beforeload", (event) => {
+            const iframeSrc = event.target.src;
+            
+            // Check if the iframe source is requesting "questionnaire" without ".html"
+            if (iframeSrc.endsWith("/questionnaire")) {
+            // Prevent the default behavior for this request
+            event.preventDefault();
+            }
+        });
+    
+        // Load "questionnaire.html" as the iframe source
+        iframe.src = "/questionnaire.html";
         
         
         // Add a load event listener to the iframe
