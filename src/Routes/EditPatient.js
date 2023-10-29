@@ -29,7 +29,7 @@ function EditPage({currentUser}) {
         // Add a load event listener to the iframe
         iframe.addEventListener("load", function(event) {
 
-            const contentDisposition = event.target.contentDocument.contentType;
+            const contentDisposition = event.target.src;
             console.log(contentDisposition)
             
             if (contentDisposition === "index.html") {
