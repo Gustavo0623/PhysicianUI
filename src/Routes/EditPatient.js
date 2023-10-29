@@ -30,6 +30,7 @@ function EditPage({currentUser}) {
     
             if (iframeSrc.endsWith("/questionnaire") && event.target.contentDocument) {
             const contentDisposition = event.target.contentDocument.contentType;
+            console.log(contentDisposition)
             
             if (contentDisposition === "index.html") {
                 // If the response content disposition is "index.html,"
