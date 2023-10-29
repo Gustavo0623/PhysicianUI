@@ -1,0 +1,10 @@
+{
+    "hungerresources": [{"type": "foodbank", "name":"CES Food Shelf", "address":"1900 11th Ave S, Minneapolis, MN 55404", "latitude": "44.9637589", "longitude": "-93.2946103"}, {"type": "foodbank", "name":"House of Charity - Food Distribution Center", "address":"1900 11th Ave S, Minneapolis, MN 55404", "latitude": "44.9637589", "longitude": "-93.2946103"}],
+    "housingresources": [{"type": "shelter", "name":"People Serving People", "address":"614 S 3rd St, Minneapolis, MN 55415", "latitude": "44.9723078", "longitude": "-93.2629557"}],
+    "transporation": [{"type": "transportation", "name":"Metro Transit Office", "address":"560 N 6th Ave, Minneapolis, MN 55411", "latitude": "44.9722366", "longitude": "-93.3070289"}],
+    "intrapersonalhelp": [{"type": "safety", "name": "Cynthia Van Hoof","address":"150 S 5th St STE 825, Minneapolis, MN 554024200", "latitude": "44.9734019", "longitude": "-93.2906789"}],
+    "suicidehelp": [{"type": "mentalHealth", "name":"M Health Fairview University of Minnesota Medical Center - West Bank","address":"2450 Riverside Ave, Minneapolis, MN 55454", "latitude": "44.9677192", "longitude": "-93.2408282"}],
+    "depressionhelp": [{"type": "mentalHealth", "name":"M Health Fairview University of Minnesota Medical Center - West Bank","address":"2450 Riverside Ave, Minneapolis, MN 55454", "latitude": "44.9677192", "longitude": "-93.2408282"}],
+    "emotionalheath": [{"type": "emotionalHealth", "name":"M Health Fairview University of Minnesota Medical Center - West Bank","address":"2450 Riverside Ave, Minneapolis, MN 55454", "latitude": "44.9677192", "longitude": "-93.2408282"}],
+    "substanceAbuse": [{"type": "rehab", "name":"Bosch Rehabilitation","address":"Bosch Rehabilitation, Minneapolis, MN 55403", "latitude": "44.9677192", "longitude": "-93.2408282"}]
+}

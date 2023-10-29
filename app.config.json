@@ -1,0 +1,10 @@
+{
+  apps : [
+    {
+      name      : "PhysicanUI-react",
+      script    : "npx",
+      interpreter: "none",
+      args: "serve -s build -p 2265"
+    }
+  ]
+}
