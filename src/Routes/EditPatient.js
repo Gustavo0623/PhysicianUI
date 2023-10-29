@@ -26,9 +26,6 @@ function EditPage({currentUser}) {
         const iframe = document.getElementById("myFrame");
     
         iframe.addEventListener("beforeload", (event) => {
-            const iframeSrc = event.target.src;
-    
-            if (iframeSrc.endsWith("/questionnaire") && event.target.contentDocument) {
             const contentDisposition = event.target.contentDocument.contentType;
             console.log(contentDisposition)
             
@@ -37,7 +34,6 @@ function EditPage({currentUser}) {
                 // set the iframe's source to "questionnaire.html"
                 iframe.src = "/questionnaire.html";
                 event.preventDefault();
-            }
             }
         });
         
