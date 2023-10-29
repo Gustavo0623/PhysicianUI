@@ -118,7 +118,7 @@ function EditPage({currentUser}) {
                             "Content-Type": "application/json",
                         },
                         body: JSON.stringify({
-                            patientName: currentUser.patientName,
+                            patientName: newPatientData.patientName,
                             MRN: currentUser.MRN,
                             questionnaireResponses: newPatientData,
                         }),
