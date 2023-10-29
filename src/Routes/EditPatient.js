@@ -149,7 +149,7 @@ function EditPage({currentUser}) {
 
     return (
         <div id='editPage'>
-            <iframe title="EditPatientForm" id="myFrame" src="../questionnaire.html"></iframe>
+            <iframe title="EditPatientForm" id="myFrame" src="iframe/questionnaire.html"></iframe>
         </div>
     )
 }
