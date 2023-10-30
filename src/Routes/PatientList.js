@@ -79,8 +79,8 @@ function PatientList ({setCurrentUser, setEdit}) {
                             <option value="option3">Option 3</option>
                         </select>
                     </div>
-                    {/* {http://160.94.179.166:2270/questionnaire/index.html} */}
-                    <a href='/newPatient' id="newButton">New</a>
+                    {/* TODO: implement /newPatient route */}
+                    <a href='http://160.94.179.166:2270/questionnaire/index.html' id="newButton">New</a>
                 </div>
             </div>
 
