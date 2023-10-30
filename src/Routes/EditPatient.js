@@ -31,12 +31,6 @@ function EditPage({currentUser}) {
             const questionnaire = restructuredData.slice(5)
             console.log(questionnaire)
 
-            const carePlanQ1 = document.getElementById('q21')
-            const carePlanQ2 = document.getElementById('q22')
-            const carePlanQ3 = document.getElementById('q23')
-            const carePlanQ4 = document.getElementById('q24')
-            const carePlanQ5 = document.getElementById('q25')
-
             // Iterate through the patient data
             questionnaire.forEach(({ question, answer }) => {
                 // Get the input element corresponding to the answer
@@ -47,17 +41,17 @@ function EditPage({currentUser}) {
                 // Set the radio input as checked
                 radioInput.checked = true;
                 }
+
+                const textarea = document.querySelector(`textarea[name="${question}"]`)
+                if (textarea) {
+                    textarea.defaultValue = answer
+                }
             });
 
             name.defaultValue = currentUser.patientName
             age.defaultValue = currentUser.questionnaireResponses.patientAge
             gender.value = currentUser.questionnaireResponses.patientGender
             dob.value = currentUser.questionnaireResponses.patientDOB
-            carePlanQ1.defaultValue = questionnaire[24] ? questionnaire[24].answer : null
-            carePlanQ2.defaultValue = questionnaire[25] ? questionnaire[25].answer : null
-            carePlanQ3.defaultValue = questionnaire[26] ? questionnaire[26].answer : null
-            carePlanQ4.defaultValue = questionnaire[27] ? questionnaire[27].answer : null
-            carePlanQ5.defaultValue = questionnaire[28] ? questionnaire[28].answer : null
 
             // Get the form element by its ID (you should replace "yourFormId" with the actual ID)
             const form = document.getElementById("patientForm");
@@ -69,12 +63,7 @@ function EditPage({currentUser}) {
                 if (
                     input.name === 'command' ||
                     input.name === 'patientName' || input.name === 'patientAge' || 
-                    input.name === 'patientGender' || input.name === 'patientDOB' ||
-                    input.name === '21. Have you experienced any harmful events with long-lasting effects on your overall health and wellbeing today that you would like the care team to know?' ||
-                    input.name === '22. Are there behaviors, environmental factors, or information that triggers a trauma response or causes significant discomfort that you would like the care team to know?' || 
-                    input.name === '23. What coping skills work well for you? What helps you manage your emotions in upsetting situations?' ||
-                    input.name === '24. Who do you rely on, and if they are available, how can they assist you during this encounter?' ||
-                    input.name === '25. What are your strengths and what is something about you or something you have done that you are proud of?'
+                    input.name === 'patientGender' || input.name === 'patientDOB'
                 ) {
                     newPatientData[input.name] = input.value;
                 }
@@ -133,6 +122,7 @@ function EditPage({currentUser}) {
             </div>
         )
     }
+
 
     return (
         <PatientForm/>

@@ -517,41 +517,36 @@ body{
 }
 
 .assessmentCategory {
-  padding: 0 1rem;
+  border-bottom: 2px solid #f1f2f4;
 }
-.assessmentCategory:last-child .questionBox, 
+.questionBox, .assessmentCategory:last-child,
 .carePlanQuestionBox:last-child {
   border-bottom: none;
 }
 
-.questionBox {
+.questionBox, .carePlanQuestionBox {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-between;
   padding: 1rem 0;
-  margin: 0 2rem;
+  margin: 0 3rem;
   border-bottom: 2px solid #f1f2f4;
 }
 
-.carePlanQuestionBox {
-  padding: 1rem 0;
-  border-bottom: 2px solid #f1f2f4;
-}
-
-.border {
+.border1 {
   border-bottom: 2px solid #f1f2f4;
   padding-bottom: 2rem;
   margin-bottom: 1rem;
 }
 
+.border1:last-child {
+  border-bottom: none;
+}
+
 .response {
   margin: 0;
   padding: 0 0 1rem 0;
-}
-
-.border1 {
-  border-bottom: none;
 }
 
 .question {

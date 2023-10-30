@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Loading from "./Loading";
 
 function RiskFactors ({riskFactors, imageDetails, questionDetails, responseDetails}) {
@@ -7,27 +7,7 @@ function RiskFactors ({riskFactors, imageDetails, questionDetails, responseDetai
     const imageURL = imageDetails[0]
     const descriptions = imageDetails[1]
     // Arrange questions arrays
-
-    const [questionsArray, setQuestionsArray] = useState([])
-    const [responseArray, setResponseArray] = useState([])
-    const setArray = (newArray, originalArray) => {
-        newArray([
-            originalArray.slice(0,3),
-            originalArray.slice(3,7),
-            originalArray.slice(7,9),
-            originalArray.slice(9,12),
-            originalArray.slice(12,17),
-            originalArray.slice(17,19),
-            originalArray.slice(19,20),
-            originalArray.slice(20,24)
-        ])
-    }
-
-    useEffect(()=> {
-        setArray(setQuestionsArray, questionDetails)
-        setArray(setResponseArray, responseDetails.slice(5))
-    }, [questionDetails, responseDetails])
-
+  
 
     // Create new arrays to store filtered results
     const filteredRiskAlerts = [];
@@ -42,8 +22,8 @@ function RiskFactors ({riskFactors, imageDetails, questionDetails, responseDetai
                 filteredRiskAlerts.push(riskAlerts[i]);
                 filteredURLs.push(imageURL[i]);
                 filteredDescriptions.push(descriptions[i]);
-                filteredQuestions.push(questionsArray[i])
-                filteredResponses.push(responseArray[i])
+                filteredQuestions.push(questionDetails[i])
+                filteredResponses.push(responseDetails[i])
             }
         }
     }
@@ -60,7 +40,7 @@ function RiskFactors ({riskFactors, imageDetails, questionDetails, responseDetai
 
         <div className='riskAlerts'>
                 <p className='header'>Risk Alerts</p>
-                <p className='riskResults'>{filteredRiskAlerts.length}</p>
+                <p className='riskResults'>{filteredRiskAlerts.length} Risks</p>
 
                 <div className='riskBoxContainer'>
                     {
@@ -79,7 +59,7 @@ function RiskFactors ({riskFactors, imageDetails, questionDetails, responseDetai
                                     filteredQuestions[riskIndex] ? 
                                         filteredQuestions[riskIndex].map((question, questionIndex) => (
                                             <div className="riskQuestionBox" key={questionIndex}>
-                                                <p className='question'><b>{questionIndex + 1}.</b> {question}</p>
+                                                <p className='question'>{question}</p>
                                                 <p className='questionResponse'><b>Response:</b> {filteredResponses[riskIndex][questionIndex] ? filteredResponses[riskIndex][questionIndex] : 'N/A'}</p>
                                             </div>
                                         )) 
