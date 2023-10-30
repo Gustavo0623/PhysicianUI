@@ -28,7 +28,7 @@ function EditPage({currentUser}) {
         
         // Add a load event listener to the iframe
         iframe.addEventListener("load", function(event) {
-            event.preventDefault()
+            
             const contentTitle = event.target.contentDocument.title;
             console.log(contentTitle)
             const iframeDocument = iframe.contentDocument;
