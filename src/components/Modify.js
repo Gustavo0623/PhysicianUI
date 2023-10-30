@@ -2,13 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 function Modify({currentUser, setUser, setEdit, fetchData}) {
-
-    // app.post("/updatePatient", (req, res) => {
-    //     const { patientName, MRN, newData } = req.body
-    // app.post("/deletePatient", (req, res) => {
-    //     const { patientName, MRN } = req.body
-
-    // TODO: fix fetch to delete
+    
     async function deletePatient() {
 
         try {

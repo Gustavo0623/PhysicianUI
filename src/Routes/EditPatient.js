@@ -29,7 +29,6 @@ function EditPage({currentUser}) {
                 answer,
             }));
             const questionnaire = restructuredData.slice(5)
-            console.log(questionnaire)
 
             // Iterate through the patient data
             questionnaire.forEach(({ question, answer }) => {

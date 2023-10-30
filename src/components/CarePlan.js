@@ -3,9 +3,6 @@ import React from "react";
 // Careplan details Component
 function Careplan ({questions, values}) {
 
-    
-    console.log(values)
-
     return (
         <div className='carePlan'>
             { questions.map((question, index) => (

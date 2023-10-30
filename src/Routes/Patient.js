@@ -8,10 +8,6 @@ import RiskFactors from "../components/RiskFactors";
 import Careplan from "../components/CarePlan";
 
 function Patient ({currentUser}) {
-
-    if (currentUser) {
-        console.log(currentUser)
-    }
     // Icon data
     const imageURL = ['../images/drink.png', '../images/home.png', '../images/car.png', '../images/shield.png', '../images/lifeline.png', '../images/sad.png', '../images/heart.png', '../images/pills-bottle.png', ]
     const descriptions = ['Food Security', 'Housing Security', 'Transportation Security', 'Interpersonal Safety', 'Suicide', 'Depression', 'Emotional Health', 'Substance Use']
@@ -66,8 +62,6 @@ function Patient ({currentUser}) {
     // Extract the first five values into a new variable
     const patientDetails = sortedValues.slice(0, 5);
 
-    console.log(patientDetails)
-
     // Remove the first five values from the original array
     sortedValues.splice(0, 5);
 
@@ -101,10 +95,6 @@ function Patient ({currentUser}) {
     const carePlanValues = groupedValues[groupedValues.length-1]
     const assessmentValues = groupedValues.slice(0, groupedValues.length - 1)
 
-    console.log(carePlanQuestions)
-    console.log(carePlanValues)
-    console.log(assessmentQuestions)
-    console.log(assessmentValues)
 
     async function fetchData() {
         try {

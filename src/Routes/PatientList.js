@@ -9,7 +9,6 @@ import Modify from '../components/Modify';
 function PatientList ({setCurrentUser, setEdit}) {
     const [selectedOption, setSelectedOption] = useState('');
     const [patientData, setPatientData] = useState(null);
-    console.log('last test?')
     
     // fetch patient data
     async function fetchData() {
