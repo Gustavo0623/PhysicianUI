@@ -66,6 +66,8 @@ function Patient ({currentUser}) {
     // Extract the first five values into a new variable
     const patientDetails = sortedValues.slice(0, 5);
 
+    console.log(patientDetails)
+
     // Remove the first five values from the original array
     sortedValues.splice(0, 5);
 
@@ -145,8 +147,6 @@ function Patient ({currentUser}) {
         )
     }
 
-    const patientInfo = currentUser.questionnaireResponses
-
     return (
         <div className='patientPage'> 
             <BackButton/>
@@ -157,8 +157,8 @@ function Patient ({currentUser}) {
                     <div className='patient'>
                         <h2 className="patientInformation">MRN: {currentUser.MRN}</h2>
                         <h2 className='patientInformation'>Age: {patientDetails[4]}</h2>
-                        <h2 className='patientInformation'>Gender: {patientDetails[3]}</h2>
-                        <h2 className='patientInformation'>DOB: {patientDetails[2]}</h2>
+                        <h2 className='patientInformation'>Gender: {patientDetails[2]}</h2>
+                        <h2 className='patientInformation'>DOB: {patientDetails[1]}</h2>
                     </div>
                     { currentUser ? <PatientInfo iconDetails={currentUser.riskFactors} imageDetails={[imageURL, descriptions]}/> : null }
                 </div>
