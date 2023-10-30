@@ -473,7 +473,6 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3rem;
   border-radius: 100%;
   padding: .5em;
   border: 2px solid black;
@@ -551,7 +550,7 @@ body{
   padding: 0 0 1rem 0;
 }
 
-.border {
+.border1 {
   border-bottom: none;
 }
 

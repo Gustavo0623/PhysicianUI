@@ -5,6 +5,7 @@ function Assessment ({currentUser, questionDetails, headers}) {
     
     // Set variable to hold the patient assessment data
     const questionnaireResponses = currentUser.questionnaireResponses
+    console.log(questionnaireResponses)
     // const keys = Object.keys(questionnaireResponses)
     const values = Object.values(questionnaireResponses)
     const response = values.slice(5)
@@ -38,10 +39,10 @@ function Assessment ({currentUser, questionDetails, headers}) {
                         index === 11 || 
                         index === 16 || 
                         index === 18 || 
-                        index === 19 ? 'questionBox border' : 'questionBox'
+                        index === 19 ? 'questionBox border1' : 'questionBox'
                     }>
                         <p className='question'><b>{index + 1}.</b> {question}</p>
-                        <p className='response'><b>Response:</b> {(response[index] !== undefined) ? response[index] : 'N/A'}</p>
+                        <p className='response'><b>Response:</b> {(response[index] !== undefined && response[index].length !== 0) ? response[index] : 'N/A'}</p>
                     </div>
                 </div>
             ))}
