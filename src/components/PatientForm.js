@@ -12,8 +12,8 @@ function PatientForm () {
                     </header>
             </div>
             <div className="container-fluid">
-                <div className="row">
-                    <div className="col-4 col-lg-2">
+                <div className="row" id="editPage">
+                    <div className="col-4 col-lg-2" id="left-form">
                         <nav id="FormNav" className="h-100 flex-column align-items-stretch pe-4 border-end">
                             <nav className="nav nav-pills flex-column sticky-top pt-5">
                                 <a className="nav-link rounded" href="#PatientInfo">Patient Info</a>
@@ -29,8 +29,8 @@ function PatientForm () {
                             </nav>
                         </nav>
                     </div>
-                    <div className="col-6 col-lg-7">
-                        <div data-bs-spy="scroll" data-bs-target="#FormNav" data-bs-smooth-scroll="true" className="" tabindex="0">
+                    <div className="col-6 col-lg-7" id="right-form">
+                        <div data-bs-spy="scroll" data-bs-target="#FormNav" data-bs-smooth-scroll="true" className="" tabIndex="0">
                             <h4>
                             Introduction: There are programs to help people with needs that can affect their health, but they aren’t reaching everyone who may need them. Are there things you need help with?
                             </h4>
@@ -41,15 +41,15 @@ function PatientForm () {
                                     <h4 className="mb-3">Patient Info</h4>
                                     <div className="mb-3">
                                         <label className="form-label">Patient Name</label>
-                                        <input type="text" id="name" className="form-control" name="patientName" required/>
+                                        <input type="text" id="name" className="form-control" name="patientName" require="true"/>
                                     </div>
                                     <div className="mb-3">
                                         <label className="form-label">Patient Age</label>
-                                        <input type="number" id="age" className="form-control" name="patientAge" require/>
+                                        <input type="number" id="age" className="form-control" name="patientAge" require="true"/>
                                     </div>
                                     <div className="mb-3">
-                                        <label for="genderSelect" className="form-label">Gender</label>
-                                        <select className="form-control" id="genderSelect" name="patientGender" required>
+                                        <label htmlFor="genderSelect" className="form-label">Gender</label>
+                                        <select className="form-control" id="genderSelect" name="patientGender" require="true">
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
                                             <option value="other">Other</option>
@@ -57,7 +57,7 @@ function PatientForm () {
                                     </div>
                                     <div className="mb-3">
                                         <label className="form-label">Date of Birth</label>
-                                        <input type="date" id="DOB" className="form-control" name="patientDOB" required/>
+                                        <input type="date" id="DOB" className="form-control" name="patientDOB" require="true"/>
                                     </div>
                                 </div>
                                     {/* <!-- Food Security (0-3; 1: medium risk, 2: high risk, 3: imminent risk) --> */}
@@ -71,13 +71,13 @@ function PatientForm () {
                                         <br/>
                                         <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input q1Y" id="inlineRadioDefault1" name="1. Do you have food for tonight? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input q1N" id="inlineRadioDefault2" name="1. Do you have food for tonight? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                         </div>
@@ -89,13 +89,13 @@ function PatientForm () {
                                         <br/>
                                         <div className="form-check form-check-reverse form-check-inline">
                                         <input className="form-check-input" id="inlineRadioDefault1" name="2. Within the past 12 months, did you worry that your food would run out before you got money to buy more? (Y/N)" type="radio" value="Yes"/>
-                                        <label className="form-check-label" for="inlineRadioDefault1">
+                                        <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                         Yes
                                         </label>
                                         </div>
                                         <div className="form-check form-check-reverse form-check-inline">
                                         <input className="form-check-input" id="inlineRadioDefault2" name="2. Within the past 12 months, did you worry that your food would run out before you got money to buy more? (Y/N)" type="radio" value="No"/>
-                                        <label className="form-check-label" for="inlineRadioDefault2">
+                                        <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                         No
                                         </label>
                                         </div>
@@ -107,13 +107,13 @@ function PatientForm () {
                                         <br/>
                                         <div className="form-check form-check-reverse form-check-inline">
                                         <input className="form-check-input" id="inlineRadioDefault1" name="3. Within the past 12 months, did the food you bought just not last and you didn’t have money to get more? (Y/N)" type="radio" value="Yes"/>
-                                        <label className="form-check-label" for="inlineRadioDefault1">
+                                        <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                         Yes
                                         </label>
                                         </div>
                                         <div className="form-check form-check-reverse form-check-inline">
                                         <input className="form-check-input" id="inlineRadioDefault2" name="3. Within the past 12 months, did the food you bought just not last and you didn’t have money to get more? (Y/N)" type="radio" value="No"/>
-                                        <label className="form-check-label" for="inlineRadioDefault2">
+                                        <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                         No
                                         </label>
                                         </div>
@@ -130,13 +130,13 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="4. Do you have somewhere safe to sleep tonight? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="4. Do you have somewhere safe to sleep tonight? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                             </div>
@@ -148,13 +148,13 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="5. Do you have housing? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="5. Do you have housing? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                             </div>
@@ -166,13 +166,13 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="6. Are you worried about losing your housing? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="6. Are you worried about losing your housing? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                             </div>
@@ -184,13 +184,13 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="7. Within the past 12 months, have you or your family members you live with been unable to get utilities (heat, electricity) when it was really needed? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="7. Within the past 12 months, have you or your family members you live with been unable to get utilities (heat, electricity) when it was really needed? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                             </div>
@@ -207,13 +207,13 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="8. Are your currently able to access reliable transportation to receive needed care (e.g. transportation to medical appointments, pharmacies for medications, other needed services)? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="8. Are your currently able to access reliable transportation to receive needed care (e.g. transportation to medical appointments, pharmacies for medications, other needed services)? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                             </div>
@@ -225,13 +225,13 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="9. Within the past 12 months, has lack of transportation kept you from medical appointments, getting your medicines, non-medical meetings or appointments, work, or from getting things that you need? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="9. Within the past 12 months, has lack of transportation kept you from medical appointments, getting your medicines, non-medical meetings or appointments, work, or from getting things that you need? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                             </div>
@@ -248,13 +248,13 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="10. Do you feel physically and emotionally safe where you currently live? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="10. Do you feel physically and emotionally safe where you currently live? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                             </div>
@@ -266,13 +266,13 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="11. Within the past 12 months, have you been hit, slapped, kicked or otherwise physically hurt by someone? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="11. Within the past 12 months, have you been hit, slapped, kicked or otherwise physically hurt by someone? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                             </div>
@@ -284,13 +284,13 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="12. Within the past 12 months, have you been humiliated or emotionally abused in other ways by your partner or ex-partner? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="12. Within the past 12 months, have you been humiliated or emotionally abused in other ways by your partner or ex-partner? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                             </div>
@@ -308,13 +308,13 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="13. Are you having thoughts of killing yourself right now? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="13. Are you having thoughts of killing yourself right now? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                             </div>
@@ -326,13 +326,13 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="14. In the past few weeks, have you wished you were dead? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="14. In the past few weeks, have you wished you were dead? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                             </div>
@@ -344,13 +344,13 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="15. In the past few weeks, have you felt that you or your family would be better off if you were dead? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="15. In the past few weeks, have you felt that you or your family would be better off if you were dead? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                             </div>
@@ -362,13 +362,13 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="16. In the past week, have you been having thoughts about killing yourself? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="16. In the past week, have you been having thoughts about killing yourself? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                             </div>
@@ -380,13 +380,13 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="17. Have you ever tried to kill yourself? (Y/N)" type="radio" value="Yes"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Yes
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="17. Have you ever tried to kill yourself? (Y/N)" type="radio" value="No"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             No
                                             </label>
                                             </div>
@@ -407,25 +407,25 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="18a. Little interest or pleasure in doing things?" type="radio" value="Not at all"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Not at all
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="18a. Little interest or pleasure in doing things?" type="radio" value="Several days"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             Several days
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault3" name="18a. Little interest or pleasure in doing things?" type="radio" value="More than half the days"/>
-                                            <label className="form-check-label" for="inlineRadioDefault3">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault3">
                                             More than half the days
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault4" name="18a. Little interest or pleasure in doing things?" type="radio" value="Nearly every day"/>
-                                            <label className="form-check-label" for="inlineRadioDefault4">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault4">
                                             Nearly every day
                                             </label>
                                             </div>
@@ -437,25 +437,25 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="18b. Feeling down, depressed, or hopeless?" type="radio" value="Not at all"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Not at all
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="18b. Feeling down, depressed, or hopeless?" type="radio" value="Several days"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             Several days
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault3" name="18b. Feeling down, depressed, or hopeless?" type="radio" value="More than half the days"/>
-                                            <label className="form-check-label" for="inlineRadioDefault3">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault3">
                                             More than half the days
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault4" name="18b. Feeling down, depressed, or hopeless?" type="radio" value="Nearly every day"/>
-                                            <label className="form-check-label" for="inlineRadioDefault4">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault4">
                                             Nearly every day
                                             </label>
                                             </div>
@@ -472,31 +472,31 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="19. Stress means a situation in which a person feels tense, restless, nervous, or anxious, or is unable to sleep at night because his or her mind is troubled all the time. Do you feel this kind of stress these days?" type="radio" value="Not at all"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Not at all
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="19. Stress means a situation in which a person feels tense, restless, nervous, or anxious, or is unable to sleep at night because his or her mind is troubled all the time. Do you feel this kind of stress these days?" type="radio" value="A little bit"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             A little bit
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault3" name="19. Stress means a situation in which a person feels tense, restless, nervous, or anxious, or is unable to sleep at night because his or her mind is troubled all the time. Do you feel this kind of stress these days?" type="radio" value="Somewhat"/>
-                                            <label className="form-check-label" for="inlineRadioDefault3">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault3">
                                             Somewhat
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault4" name="19. Stress means a situation in which a person feels tense, restless, nervous, or anxious, or is unable to sleep at night because his or her mind is troubled all the time. Do you feel this kind of stress these days?" type="radio" value="Quite a bit"/>
-                                            <label className="form-check-label" for="inlineRadioDefault4">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault4">
                                             Quite a bit
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault5" name="19. Stress means a situation in which a person feels tense, restless, nervous, or anxious, or is unable to sleep at night because his or her mind is troubled all the time. Do you feel this kind of stress these days?" type="radio" value="Very much"/>
-                                            <label className="form-check-label" for="inlineRadioDefault5">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault5">
                                             Very much
                                             </label>
                                             </div>
@@ -526,31 +526,31 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="20a. How many times in the past 12 months have you had 5 or more drinks in a day (males) or 4 or more drinks in a day (females)? One drink is 12 ounces of beer, 5 ounces of wine, or 1.5 ounces of 80-proof spirits." type="radio" value="Never"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Never
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="20a. How many times in the past 12 months have you had 5 or more drinks in a day (males) or 4 or more drinks in a day (females)? One drink is 12 ounces of beer, 5 ounces of wine, or 1.5 ounces of 80-proof spirits." type="radio" value="Once or Twice"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             Once or Twice
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault3" name="20a. How many times in the past 12 months have you had 5 or more drinks in a day (males) or 4 or more drinks in a day (females)? One drink is 12 ounces of beer, 5 ounces of wine, or 1.5 ounces of 80-proof spirits." type="radio" value="Monthly"/>
-                                            <label className="form-check-label" for="inlineRadioDefault3">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault3">
                                             Monthly
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault4" name="20a. How many times in the past 12 months have you had 5 or more drinks in a day (males) or 4 or more drinks in a day (females)? One drink is 12 ounces of beer, 5 ounces of wine, or 1.5 ounces of 80-proof spirits." type="radio" value="Weekly"/>
-                                            <label className="form-check-label" for="inlineRadioDefault4">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault4">
                                             Weekly
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault5" name="20a. How many times in the past 12 months have you had 5 or more drinks in a day (males) or 4 or more drinks in a day (females)? One drink is 12 ounces of beer, 5 ounces of wine, or 1.5 ounces of 80-proof spirits." type="radio" value="Daily or Almost Daily"/>
-                                            <label className="form-check-label" for="inlineRadioDefault5">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault5">
                                             Daily or Almost Daily
                                             </label>
                                             </div>
@@ -562,31 +562,31 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="20b. How many times in the past 12 months have you used prescription drugs for non-medical reasons?" type="radio" value="Never"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Never
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="20b. How many times in the past 12 months have you used prescription drugs for non-medical reasons?" type="radio" value="Once or Twice"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             Once or Twice
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault3" name="20b. How many times in the past 12 months have you used prescription drugs for non-medical reasons?" type="radio" value="Monthly"/>
-                                            <label className="form-check-label" for="inlineRadioDefault3">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault3">
                                             Monthly
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault4" name="20b. How many times in the past 12 months have you used prescription drugs for non-medical reasons?" type="radio" value="Weekly"/>
-                                            <label className="form-check-label" for="inlineRadioDefault4">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault4">
                                             Weekly
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault5" name="20b. How many times in the past 12 months have you used prescription drugs for non-medical reasons?" type="radio" value="Daily or Almost Daily"/>
-                                            <label className="form-check-label" for="inlineRadioDefault5">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault5">
                                             Daily or Almost Daily
                                             </label>
                                             </div>
@@ -598,31 +598,31 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="20c. How many times in the past 12 months have you used illegal drugs?" type="radio" value="Never"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Never
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="20c. How many times in the past 12 months have you used illegal drugs?" type="radio" value="Once or Twice"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             Once or Twice
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault3" name="20c. How many times in the past 12 months have you used illegal drugs?" type="radio" value="Monthly"/>
-                                            <label className="form-check-label" for="inlineRadioDefault3">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault3">
                                             Monthly
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault4" name="20c. How many times in the past 12 months have you used illegal drugs?" type="radio" value="Weekly"/>
-                                            <label className="form-check-label" for="inlineRadioDefault4">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault4">
                                             Weekly
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault5" name="20c. How many times in the past 12 months have you used illegal drugs?" type="radio" value="Daily or Almost Daily"/>
-                                            <label className="form-check-label" for="inlineRadioDefault5">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault5">
                                             Daily or Almost Daily
                                             </label>
                                             </div>
@@ -634,31 +634,31 @@ function PatientForm () {
                                             <br/>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault1" name="20d. How many times in the past 12 months have you used tobacco products (like cigarettes, cigars, snuff, chew, electronic cigarettes)?" type="radio" value="Never"/>
-                                            <label className="form-check-label" for="inlineRadioDefault1">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault1">
                                             Never
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault2" name="20d. How many times in the past 12 months have you used tobacco products (like cigarettes, cigars, snuff, chew, electronic cigarettes)?" type="radio" value="Once or Twice"/>
-                                            <label className="form-check-label" for="inlineRadioDefault2">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault2">
                                             Once or Twice
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault3" name="20d. How many times in the past 12 months have you used tobacco products (like cigarettes, cigars, snuff, chew, electronic cigarettes)?" type="radio" value="Monthly"/>
-                                            <label className="form-check-label" for="inlineRadioDefault3">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault3">
                                             Monthly
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input" id="inlineRadioDefault4" name="20d. How many times in the past 12 months have you used tobacco products (like cigarettes, cigars, snuff, chew, electronic cigarettes)?" type="radio" value="Weekly"/>
-                                            <label className="form-check-label" for="inlineRadioDefault4">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault4">
                                             Weekly
                                             </label>
                                             </div>
                                             <div className="form-check form-check-reverse form-check-inline">
                                             <input className="form-check-input q24-5" id="inlineRadioDefault5" name="20d. How many times in the past 12 months have you used tobacco products (like cigarettes, cigars, snuff, chew, electronic cigarettes)?" type="radio" value="Daily or Almost Daily"/>
-                                            <label className="form-check-label" for="inlineRadioDefault5">
+                                            <label className="form-check-label" htmlFor="inlineRadioDefault5">
                                             Daily or Almost Daily
                                             </label>
                                             </div>

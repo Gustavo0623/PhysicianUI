@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react"
 import BackButton from "../components/BackBtn";
 import Loading from "../components/Loading";
 import { useNavigate } from "react-router-dom";
+import PatientForm from "../components/PatientForm";
 
 function EditPage({currentUser}) {
-    console.log(currentUser)
-
     const navigate = useNavigate()
     const [submit, setSubmit] = useState(false)
 
@@ -21,24 +20,10 @@ function EditPage({currentUser}) {
         if (submit) {
             navigate('../patients')
         }
-
-        // Get a reference to the iframe
-        const iframe = document.getElementById("myFrame");
-        
-        
-        // Add a load event listener to the iframe
-        iframe.addEventListener("load", function(event) {
-            
-            const contentTitle = event.target.contentDocument.title;
-            console.log(contentTitle)
-            const iframeDocument = iframe.contentDocument;
-            console.log(iframeDocument)
-    
-            // Get a reference to the button inside the iframe
-            const name  = iframeDocument.getElementById('name')
-            const age  = iframeDocument.getElementById('age')
-            const gender = iframeDocument.getElementById('genderSelect')
-            const dob = iframeDocument.getElementById('DOB')
+            const name  = document.getElementById('name')
+            const age  = document.getElementById('age')
+            const gender = document.getElementById('genderSelect')
+            const dob = document.getElementById('DOB')
             const restructuredData = Object.entries(currentUser.questionnaireResponses).map(([question, answer]) => ({
                 question,
                 answer,
@@ -46,16 +31,16 @@ function EditPage({currentUser}) {
             const questionnaire = restructuredData.slice(5)
             console.log(questionnaire)
 
-            const carePlanQ1 = iframeDocument.getElementById('q21')
-            const carePlanQ2 = iframeDocument.getElementById('q22')
-            const carePlanQ3 = iframeDocument.getElementById('q23')
-            const carePlanQ4 = iframeDocument.getElementById('q24')
-            const carePlanQ5 = iframeDocument.getElementById('q25')
+            const carePlanQ1 = document.getElementById('q21')
+            const carePlanQ2 = document.getElementById('q22')
+            const carePlanQ3 = document.getElementById('q23')
+            const carePlanQ4 = document.getElementById('q24')
+            const carePlanQ5 = document.getElementById('q25')
 
             // Iterate through the patient data
             questionnaire.forEach(({ question, answer }) => {
                 // Get the input element corresponding to the answer
-                const radioInput = iframeDocument.querySelector(`input[type="radio"][name="${question}"][value="${answer}"]`);
+                const radioInput = document.querySelector(`input[type="radio"][name="${question}"][value="${answer}"]`);
 
                 // Check if the radio input exists (not null)
                 if (radioInput) {
@@ -75,7 +60,7 @@ function EditPage({currentUser}) {
             carePlanQ5.defaultValue = questionnaire[28] ? questionnaire[28].answer : null
 
             // Get the form element by its ID (you should replace "yourFormId" with the actual ID)
-            const form = iframeDocument.getElementById("patientForm");
+            const form = document.getElementById("patientForm");
 
             // Iterate through the form inputs and add event listeners
             const formInputs = form.querySelectorAll("input, select, textarea");
@@ -138,7 +123,6 @@ function EditPage({currentUser}) {
                     // Handle the error as needed, e.g., display an error message to the user
                 }
             });
-        });
     }, [currentUser, navigate, submit])
 
     if (!currentUser) {
@@ -151,9 +135,7 @@ function EditPage({currentUser}) {
     }
 
     return (
-        <div id='editPage'>
-            <iframe title="EditPatientForm" id="myFrame" src="/questionnaire.html"></iframe>
-        </div>
+        <PatientForm/>
     )
 }
 

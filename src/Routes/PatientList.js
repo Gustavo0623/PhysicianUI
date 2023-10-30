@@ -80,7 +80,7 @@ function PatientList ({setCurrentUser, setEdit}) {
                         </select>
                     </div>
                     {/* {http://160.94.179.166:2270/questionnaire/index.html} */}
-                    <a href='http://160.94.179.166:2270/questionnaire/index.html' id="newButton">New</a>
+                    <a href='/newPatient' id="newButton">New</a>
                 </div>
             </div>
 

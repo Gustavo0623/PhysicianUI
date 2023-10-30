@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Patient from './Routes/Patient';
 import PatientList from './Routes/PatientList';
 import EditPage from './Routes/EditPatient';
+import NewPatient from './Routes/NewPatient';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route exact path='/patients' element={ <PatientList setCurrentUser={setCurrentUser} setEdit={setEdit}/> }></Route>
           <Route exact path='/patients/:patientMRN' element={ <Patient currentUser={currentUser} edit={edit} setEdit={setEdit}/> }></Route>
           <Route exact path='/editPatient' element={ <EditPage currentUser={currentUser} setEdit={setEdit}/> }></Route>
+          <Route exact path='/newPatient' element={ <NewPatient/> }></Route>
         </Routes>
       </BrowserRouter>
     </div>

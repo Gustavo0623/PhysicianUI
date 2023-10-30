@@ -104,8 +104,8 @@ body{
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 36px;
+  height: 36px;
   padding: .5em;
   border-radius: 50%;
   display: flex;
@@ -695,12 +695,11 @@ body{
 #editPage {
   padding: 2rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 
-#myFrame{
-  height: 88vh;
+#left-form, #right-form {
+  flex-grow: 1;
 }
 
 /* For screens smaller than 768px (XS and SM devices) */
