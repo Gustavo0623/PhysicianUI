@@ -686,6 +686,11 @@ body{
 }
 
 /* Edit Page */
+
+#formHeader {
+  font-weight: bolder;
+}
+
 #editPage {
   padding: 2rem;
   display: flex;

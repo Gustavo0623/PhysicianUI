@@ -31,8 +31,10 @@ function PatientForm () {
                     </div>
                     <div className="col-6 col-lg-7" id="right-form">
                         <div data-bs-spy="scroll" data-bs-target="#FormNav" data-bs-smooth-scroll="true" className="" tabIndex="0">
+                            <h2 id='formHeader'></h2>
+                            <hr/>
                             <h4>
-                            Introduction: There are programs to help people with needs that can affect their health, but they aren’t reaching everyone who may need them. Are there things you need help with?
+                                There are programs to help people with needs that can affect their health, but they aren’t reaching everyone who may need them. Are there things you need help with?
                             </h4>
                             <hr/>
                             <form id="patientForm" action="/" method="post">

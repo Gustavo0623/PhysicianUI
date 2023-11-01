@@ -24,11 +24,15 @@ function EditPage({currentUser}) {
             const age  = document.getElementById('age')
             const gender = document.getElementById('genderSelect')
             const dob = document.getElementById('DOB')
+            const header = document.getElementById('formHeader')
             const restructuredData = Object.entries(currentUser.questionnaireResponses).map(([question, answer]) => ({
                 question,
                 answer,
             }));
             const questionnaire = restructuredData.slice(5)
+
+            // Set header for edit page
+            header.innerHTML = 'Edit Patient'
 
             // Iterate through the patient data
             questionnaire.forEach(({ question, answer }) => {
