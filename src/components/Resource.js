@@ -17,8 +17,9 @@ function Resource ({riskFactors, resources}) {
                         <div className='resourceDetailBox'>
                             {resourceDetails[index].map((resource, index) => (
                                 <div className='resourceDetails' key={index}>
-                                    <p className='resourceDetail'><strong>Name:</strong> {resource.name}</p>
+                                    <p className='resourceDetail'><strong>{`${index + 1}${'.'}`} Name:</strong> {resource.name}</p>
                                     <p className='resourceDetail'><strong>Address:</strong> {resource.address}</p>
+                                    <p className='resourceDetail'><strong>Description:</strong> {resource.description ? resource.description : 'No Description Available'}</p>
                                 </div>
                             ))}
                         </div>
