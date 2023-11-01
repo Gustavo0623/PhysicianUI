@@ -206,7 +206,7 @@ body{
 }
 
 #patientsText{
-  width: calc(100% - 2.5em);
+  width: calc(100% - 5rem);
   margin: 2rem auto .5rem;
   text-align: left;
 }
