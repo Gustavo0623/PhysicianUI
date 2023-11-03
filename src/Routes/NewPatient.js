@@ -5,15 +5,19 @@ import PatientForm from "../components/PatientForm";
 function NewPatient () {
     const navigate = useNavigate()
     const [submit, setSubmit] = useState(false)
-
+    
     useEffect(()=> {
-
+        
         // Create an object to store the selected values
         const newPatientData = {};
+        const header = document.getElementById('formHeader')
 
         if (submit) {
             navigate('../patients')
         }
+
+        // Set header for edit page
+        header.innerHTML = 'New Patient'
 
         
         // Get the form element by its ID (you should replace "yourFormId" with the actual ID)
