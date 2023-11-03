@@ -21,8 +21,8 @@ function NewPatient () {
         // Iterate through the form inputs and add event listeners
         const formInputs = form.querySelectorAll("input, select, textarea");
         formInputs.forEach((input) => {
-            if (input.name === 'command' || input.name === 'patientGender') {
-                newPatientData[input.name] = input.value;
+            if (input.name === 'command' || input.name === 'patientGender' || input.name === '21. Have you experienced any harmful events with long-lasting effects on your overall health and wellbeing today that you would like the care team to know?' || input.name === '22. Are there behaviors, environmental factors, or information that triggers a trauma response or causes significant discomfort that you would like the care team to know?' || input.name === '23. What coping skills work well for you? What helps you manage your emotions in upsetting situations?' || input.name === '24. Who do you rely on, and if they are available, how can they assist you during this encounter?' || input.name === '25. What are your strengths and what is something about you or something you have done that you are proud of?') {
+                newPatientData[input.name] = input.value ? input.value : '';
             }
             input.addEventListener("change", function() {
                 // Update the newPatientData object when input values change
@@ -43,9 +43,7 @@ function NewPatient () {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({
-                        questionnaireData: newPatientData
-                    }),
+                    body: JSON.stringify(newPatientData),
                 });
                 console.log(response)
                 console.log(newPatientData)
