@@ -5,6 +5,7 @@ import Patient from './Routes/Patient';
 import PatientList from './Routes/PatientList';
 import EditPage from './Routes/EditPatient';
 import NewPatient from './Routes/NewPatient';
+import ComLogin from './Routes/ComLogin';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route exact path='/patients/:patientMRN' element={ <Patient currentUser={currentUser} edit={edit} setEdit={setEdit}/> }></Route>
           <Route exact path='/editPatient' element={ <EditPage currentUser={currentUser} setEdit={setEdit}/> }></Route>
           <Route exact path='/newPatient' element={ <NewPatient/> }></Route>
+          <Route exact path='/comLogin' element={ <ComLogin/> }></Route>
         </Routes>
       </BrowserRouter>
     </div>
