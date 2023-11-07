@@ -6,6 +6,7 @@ import PatientList from './Routes/PatientList';
 import EditPage from './Routes/EditPatient';
 import NewPatient from './Routes/NewPatient';
 import ComLogin from './Routes/ComLogin';
+import ComAccCreate from './Routes/ComAccCreate'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           <Route exact path='/editPatient' element={ <EditPage currentUser={currentUser} setEdit={setEdit}/> }></Route>
           <Route exact path='/newPatient' element={ <NewPatient/> }></Route>
           <Route exact path='/comLogin' element={ <ComLogin/> }></Route>
+          <Route exact path='/comAccCreate' element={ <ComAccCreate/> }></Route>
         </Routes>
       </BrowserRouter>
     </div>

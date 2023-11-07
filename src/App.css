@@ -703,7 +703,7 @@ body{
 
 /* Com Login Page */
 
-.comLoginPage {
+.formPage {
   width: calc(100% - 5em);
   height: 100vh;
   margin: auto;
@@ -712,7 +712,7 @@ body{
   align-items: center;
 }
 
-.comLogin {
+.formContainer {
   width: 20%;
   margin: 1rem 0;
   border-radius: 8px;
@@ -721,13 +721,13 @@ body{
   border: 1px solid #dee2e6;
 }
 
-.comLoginLabel {
+.formLabel {
   margin: 1em 0 0;
   font-size: 16px;
   color: #6B707B;
 }
 
-.comLoginInput {
+.formInput {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -738,10 +738,11 @@ body{
 .formFieldContainer {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-.comLoginButton {
-  margin: 2em 0 0;
+.formSubmitButton {
+  margin: 1em 0 0;
   width: 100%;
   border: none;
   text-decoration: none;
@@ -758,15 +759,50 @@ body{
   border: 2px solid #212254;
 }
 
-.comLoginButton:hover {
+.formSubmitButton:hover {
   background-color: #ffffff;
   color: #212254;
   border: 2px solid #212254;
 }
 
+.comLoginSubtext {
+  color: #6B707B;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 1em 0 0 0;
+  text-align: center;
+}
+
+.comLoginRemember {
+  display: flex;
+  align-items: center;
+  margin-top: 0.9em;
+}
+
+.comLoginRemember label {
+  margin: 0;
+  padding-left: 0.3em;
+}
+
+/* Com Acc Create Page */
+
+.comAccCreateRow {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.formSmallInput {
+  width: 100%;
+}
+
 /* For screens smaller than 768px (XS and SM devices) */
 @media (max-width: 767px) {
   /* CSS rules for small screens */
+
+  .formContainer {
+    width: 90%;
+  }
 
   .dropText {
     padding-left: 3.5rem;

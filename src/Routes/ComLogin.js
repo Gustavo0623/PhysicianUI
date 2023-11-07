@@ -10,19 +10,24 @@ export const ComLogin = () => {
 
     return(
         // Form
-        <div className="comLoginPage">
-            <div className="comLogin">
+        <div className="formPage">
+            <div className="formContainer">
                 <h1 className="header">Community Resource Login</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="formFieldContainer">
-                        <label className="comLoginLabel">Email Address</label>
-                        <input className="comLoginInput" type="email" />                        
+                        <label className="formLabel">Email Address</label>
+                        <input className="formInput" type="email" />                        
                     </div>
                     <div className="formFieldContainer">
-                        <label className="comLoginLabel">Password</label>
-                        <input className="comLoginInput" type="password" />
+                        <label className="formLabel">Password</label>
+                        <input className="formInput" type="password" />
                     </div>
-                    <button className="comLoginButton" type="submit">Login</button>
+                    <div className="comLoginRemember">
+                        <input type="checkbox" id="rememberMe" />
+                        <label htmlFor="rememberMe" className="formLabel">Remember Me</label>
+                    </div>
+                    <button className="formSubmitButton" type="submit">Login</button>
+                    <p className="comLoginSubtext">New user? Click here to sign up.</p>
                 </form>
             </div>
         </div>
