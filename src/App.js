@@ -8,6 +8,7 @@ import NewPatient from './Routes/NewPatient';
 import ComLogin from './Routes/ComLogin';
 import ComAccCreate from './Routes/ComAccCreate'
 import NewResource from './Routes/NewResource'
+import ResourceList from './Routes/ResourceList'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           <Route exact path='/comLogin' element={ <ComLogin/> }></Route>
           <Route exact path='/comAccCreate' element={ <ComAccCreate/> }></Route>
           <Route exact path='/newResource' element={ <NewResource/> }></Route>
+          <Route exact path='/resourceList' element={ <ResourceList/> }></Route>
         </Routes>
       </BrowserRouter>
     </div>

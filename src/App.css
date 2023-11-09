@@ -731,6 +731,7 @@ body{
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
+    border-radius: 6px;
     border: 1px solid #dee2e6;
     color: #212529;
 }
@@ -765,12 +766,42 @@ body{
   border: 2px solid #212254;
 }
 
+.formSelectContainer {
+  position: relative;
+}
+
+.formSelect {
+  appearance: none;
+  width: 100%;
+  padding: 0.06em 0.5em;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+} 
+
+.selectArrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000;
+  pointer-events: none;
+  z-index: 2;
+}
+
 .comLoginSubtext {
   color: #6B707B;
   font-size: 14px;
   font-weight: 400;
   margin: 1em 0 0 0;
   text-align: center;
+}
+
+.comLoginSubtext a {
+  color: inherit;
 }
 
 .comLoginRemember {
@@ -794,6 +825,138 @@ body{
 
 .formSmallInput {
   width: 100%;
+}
+
+/* Resource List Page */
+
+.newResource {
+  min-height: 98vh;
+}
+
+.resourceHeader {
+  width: calc(100% - 5rem);
+  margin: 2rem auto .5rem;
+  text-align: left;
+}
+
+.resourceListHeader {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - 5em);
+  margin: .5rem auto;
+  justify-content: space-between;
+  gap: .5rem;
+  align-items: center;
+}
+
+.resourceListCount {
+  flex-grow: 8;
+  flex-basis: 200px;
+  text-align: left;
+  color: #6c6a72;
+  margin: auto;
+}
+
+.newResourceButton {
+  flex-basis: 100px;
+  flex-grow: 0.5;
+  margin: 0;
+}
+
+.resourceListContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+  gap: .5em;
+  padding: 1em 2em;
+  background-color: #ffffff;
+  margin: 1em 2.5rem;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.resourceListHeaderRow {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 400px;
+  padding: 1rem 0;
+  margin: 0;
+  gap: 1rem;
+  flex-direction: row;
+  font-weight: bold;
+}
+
+.resourceListNameHeader {
+  text-align: left;
+  flex: 4.5 1;
+}
+
+.resourceListCategoryHeader {
+  text-align: left;
+  flex: 2 1;
+}
+
+.resourceListAddressHeader {
+  text-align: left;
+  flex: 5 1;
+  min-width: 212px;
+}
+
+.resourceListModifyHeader {
+  flex: 0.5 1;
+  visibility: hidden;
+}
+
+.resourceListRow {
+  display: flex;
+  min-width: 400px;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin: 0;
+  border-bottom: 2px solid #f9f9fa;
+}
+
+.resourceListContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: black;
+  flex: 1 1;
+}
+
+.resourceListNameItem {
+  margin: auto;
+  text-align: left;
+  flex: 4.5 1;
+}
+
+.resourceListCategoryItem {
+  margin: auto;
+  text-align: left;
+  flex: 2 1;
+}
+
+.resourceListAddressItem {
+    display: flex;
+    flex: 5 1;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5em;
+}
+
+.modifyButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
 }
 
 /* For screens smaller than 768px (XS and SM devices) */

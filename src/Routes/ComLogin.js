@@ -27,7 +27,7 @@ export const ComLogin = () => {
                         <label htmlFor="rememberMe" className="formLabel">Remember Me</label>
                     </div>
                     <button className="formSubmitButton" type="submit">Login</button>
-                    <p className="comLoginSubtext">New user? Click here to sign up.</p>
+                    <p className="comLoginSubtext">New user? <a href="/ComAccCreate">Click here to sign up.</a></p>
                 </form>
             </div>
         </div>

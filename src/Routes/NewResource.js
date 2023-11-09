@@ -1,6 +1,7 @@
 import React from "react";
 
 // New Community Resource
+// TODO: Add organization name of account creating resource to beginning of resource name before storing
 
 export const NewResource = () => {
 
@@ -18,15 +19,25 @@ export const NewResource = () => {
                         <label className="formLabel">Resource Name</label>
                         <input className="formInput" type="text" />                        
                     </div>
+{/*                    <div className="formFieldContainer"> */} 
+{/*                        <label className="formLabel">Resource Description</label> */} 
+{/*                        <input className="formInput" type="text" />                */}          
+{/*                    </div>   */}  
                     <div className="formFieldContainer">
-                        <label className="formLabel">Resource Description</label>
-                        <input className="formInput" type="text" />                        
-                    </div>
-                    <div className="formFieldContainer">
-                        <label className="formLabel">Resource Type</label>
-                        <select name="resourceType">
-                            <option value="Food Bank">Food Bank</option>
-                        </select>                      
+                        <label className="formLabel">Resource Category</label>
+                        <div className="formSelectContainer">
+                            <span className="selectArrow"></span>
+                            <select className="formSelect" name="resourceType">
+                                <option value="hungerresources">Hunger</option>
+                                <option value="housingresources">Housing</option>
+                                <option value="transporation">Transportation</option>
+                                <option value="intrapersonalhelp">Intrapersonal Help</option>
+                                <option value="suicidehelp">Suicide Help</option>
+                                <option value="depressionhelp">Depression Help</option>
+                                <option value="emotionalheath">Emotional Health</option>
+                                <option value="substanceAbuse">Substance Abuse</option>
+                            </select>    
+                        </div>                  
                     </div>
                     <div className="formFieldContainer">
                         <label className="formLabel">Resource Address</label>

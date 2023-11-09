@@ -7,7 +7,6 @@ export const ComAccCreate = () => {
     function handleSubmit() {
         console.log("placeholder")
     }
-
     return(
         // Form
         <div className="formPage">
@@ -29,8 +28,14 @@ export const ComAccCreate = () => {
                             <label className="formLabel">Email</label>
                             <input className="formInput formSmallInput" type="email" />                        
                         </div>
+                    </div>
+                    <div className="comAccCreateRow">
                         <div className="formFieldContainer">
                             <label className="formLabel">Password</label>
+                            <input className="formInput formSmallInput" type="password" />
+                        </div>
+                        <div className="formFieldContainer">
+                            <label className="formLabel">Confirm Password</label>
                             <input className="formInput formSmallInput" type="password" />
                         </div>
                     </div>
