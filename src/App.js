@@ -6,7 +6,9 @@ import PatientList from './Routes/PatientList';
 import EditPage from './Routes/EditPatient';
 import NewPatient from './Routes/NewPatient';
 import ComLogin from './Routes/ComLogin';
+import { Login } from './Routes/Login';
 import ComAccCreate from './Routes/ComAccCreate'
+import { NewAccount } from './Routes/NewAccount';
 import NewResource from './Routes/NewResource'
 import ResourceList from './Routes/ResourceList'
 
@@ -24,7 +26,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* TODO: Add Landing Page Route */}
-          <Route path="/" element={ <Navigate to="/patients"/> } />
+          <Route path="/" element={ <Navigate to="/login"/> } />
           <Route exact path='/patients' element={ <PatientList setCurrentUser={setCurrentUser} setEdit={setEdit}/> }></Route>
           <Route exact path='/patients/:patientMRN' element={ <Patient currentUser={currentUser} edit={edit} setEdit={setEdit}/> }></Route>
           <Route exact path='/editPatient' element={ <EditPage currentUser={currentUser} setEdit={setEdit}/> }></Route>
@@ -33,6 +35,8 @@ function App() {
           <Route exact path='/comAccCreate' element={ <ComAccCreate/> }></Route>
           <Route exact path='/newResource' element={ <NewResource/> }></Route>
           <Route exact path='/resourceList' element={ <ResourceList/> }></Route>
+          <Route exact path='/login' element={ <Login/> }></Route>
+          <Route exact path='/signup' element={ <NewAccount/> }></Route>
         </Routes>
       </BrowserRouter>
     </div>

@@ -6,6 +6,7 @@ import Loading from "../components/Loading";
 import PatientInfo from "../components/PatientInfo";
 import RiskFactors from "../components/RiskFactors";
 import Careplan from "../components/CarePlan";
+import Nav from "../components/PhysNav";
 
 function Patient ({currentUser}) {
     // Icon data
@@ -138,50 +139,53 @@ function Patient ({currentUser}) {
     }
 
     return (
-        <div className='patientPage'> 
-            <BackButton/>
-            <div id="patientDetailBox">
-                <p className='patientDetailsText'>PATIENT DETAILS</p>
-                <div className="assessmentIcons">
-                    <h1 className='name'>{currentUser.patientName}</h1>
-                    <div className='patient'>
-                        <h2 className="patientInformation">MRN: {currentUser.MRN}</h2>
-                        <h2 className='patientInformation'>Age: {patientDetails[4]}</h2>
-                        <h2 className='patientInformation'>Gender: {patientDetails[2]}</h2>
-                        <h2 className='patientInformation'>DOB: {patientDetails[1]}</h2>
+        <div className="page">
+            <Nav url='../images/vertex-updated-logo.webp'/>
+            <div className='patientPage'> 
+                <BackButton/>
+                <div id="patientDetailBox">
+                    <p className='patientDetailsText'>PATIENT DETAILS</p>
+                    <div className="assessmentIcons">
+                        <h1 className='name'>{currentUser.patientName}</h1>
+                        <div className='patient'>
+                            <h2 className="patientInformation">MRN: {currentUser.MRN}</h2>
+                            <h2 className='patientInformation'>Age: {patientDetails[4]}</h2>
+                            <h2 className='patientInformation'>Gender: {patientDetails[2]}</h2>
+                            <h2 className='patientInformation'>DOB: {patientDetails[1]}</h2>
+                        </div>
+                        { currentUser ? <PatientInfo iconDetails={currentUser.riskFactors} imageDetails={[imageURL, descriptions]}/> : null }
                     </div>
-                    { currentUser ? <PatientInfo iconDetails={currentUser.riskFactors} imageDetails={[imageURL, descriptions]}/> : null }
                 </div>
+                <div className="buttonBar">
+                    <div className='buttonBox'>
+                        <button className={!assessmentState ? "dropButton" : "dropButton active"} onClick={() => {
+                            !assessmentState ? 
+                                setAssessmentState(true) 
+                            :
+                                setAssessmentState(false)
+                        }}>
+                            <span className={!assessmentState ? "arrowBG" : "arrowUp"}></span>
+                            <p className="dropText">Psychosocial Assessment</p> 
+                        </button>
+                        {assessmentState ? <Assessment questionDetails={assessmentQuestions} headers={descriptions} assessmentValues={assessmentValues}/> : null}
+                    </div>
+                    <div className='buttonBox'>
+                        <button className={!carePlanState ? "dropButton" : "dropButton active"} onClick={() => {
+                            !carePlanState ? 
+                                setCarePlanState(true)
+                            :
+                                setCarePlanState(false)
+                        }}>
+                            <span className={!carePlanState ? "arrowBG" : "arrowUp"}></span>
+                            <p className="dropText">Trauma-Informed Care Plan</p>
+                        </button>
+                        {carePlanState ? <Careplan questions={carePlanQuestions} values={carePlanValues}/> : null}
+                    </div>
+                </div>
+                <RiskFactors riskFactors={currentUser.riskFactors} imageDetails={[imageURL, descriptions]} questionDetails={categories} responseDetails={assessmentValues}/>
+                <p className='header'>Resources</p>
+                <Resource riskFactors={currentUser.riskFactors} resources={resources.return}/>
             </div>
-            <div className="buttonBar">
-                <div className='buttonBox'>
-                    <button className={!assessmentState ? "dropButton" : "dropButton active"} onClick={() => {
-                        !assessmentState ? 
-                            setAssessmentState(true) 
-                        :
-                            setAssessmentState(false)
-                    }}>
-                        <span className={!assessmentState ? "arrowBG" : "arrowUp"}></span>
-                        <p className="dropText">Psychosocial Assessment</p> 
-                    </button>
-                    {assessmentState ? <Assessment questionDetails={assessmentQuestions} headers={descriptions} assessmentValues={assessmentValues}/> : null}
-                </div>
-                <div className='buttonBox'>
-                    <button className={!carePlanState ? "dropButton" : "dropButton active"} onClick={() => {
-                        !carePlanState ? 
-                            setCarePlanState(true)
-                        :
-                            setCarePlanState(false)
-                    }}>
-                        <span className={!carePlanState ? "arrowBG" : "arrowUp"}></span>
-                        <p className="dropText">Trauma-Informed Care Plan</p>
-                    </button>
-                    {carePlanState ? <Careplan questions={carePlanQuestions} values={carePlanValues}/> : null}
-                </div>
-            </div>
-            <RiskFactors riskFactors={currentUser.riskFactors} imageDetails={[imageURL, descriptions]} questionDetails={categories} responseDetails={assessmentValues}/>
-            <p className='header'>Resources</p>
-            <Resource riskFactors={currentUser.riskFactors} resources={resources.return}/>
         </div>
 
     )

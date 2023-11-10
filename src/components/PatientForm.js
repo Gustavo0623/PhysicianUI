@@ -1,20 +1,15 @@
 import React from "react";
+import Nav from "./PhysNav";
 
 function PatientForm () {
 
     return(
-        <div>
-            <div className="container-fluid Header">
-                    <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom border-dark">
-                        <span className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                        <img src="./images/vertex-updated-logo.webp" alt="Logo" id="Logo"/>
-                        </span>
-                    </header>
-            </div>
-            <div className="container-fluid">
+        <div className="page">
+            <Nav/>
+            <div className="container-fluid mainView">
                 <div className="row" id="editPage">
                     <div className="col-4 col-lg-2" id="left-form">
-                        <nav id="FormNav" className="h-100 flex-column align-items-stretch pe-4 border-end">
+                        <nav id="FormNav" className="h-100 flex-column border-end">
                             <nav className="nav nav-pills flex-column sticky-top pt-5">
                                 <a className="nav-link rounded" href="#PatientInfo">Patient Info</a>
                                 <a className="nav-link rounded" href="#FoodSecurity">Food Security</a>
@@ -31,7 +26,7 @@ function PatientForm () {
                     </div>
                     <div className="col-6 col-lg-7" id="right-form">
                         <div data-bs-spy="scroll" data-bs-target="#FormNav" data-bs-smooth-scroll="true" className="" tabIndex="0">
-                            <h2 id='formHeader'></h2>
+                            <h2 id='formHeader'>Header</h2>
                             <hr/>
                             <h4>
                                 There are programs to help people with needs that can affect their health, but they aren’t reaching everyone who may need them. Are there things you need help with?

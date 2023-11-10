@@ -146,9 +146,7 @@ body{
 }
 
 .patientPage {
-  width: calc(100% - 5em);
-  margin: auto;
-  
+  padding: 0 2.5rem;
 }
 
 .titleBox {
@@ -278,11 +276,9 @@ body{
 }
 
 #newButton:hover {
-  padding: calc(.5em - 2px) 0;
-  flex-basis: 96px;
   background-color: #ffffff;
   color: #212254;
-  border: 2px solid #212254
+  outline: 2px solid #212254
 }
 #nameText{
   text-align: left;
@@ -704,8 +700,7 @@ body{
 /* Com Login Page */
 
 .formPage {
-  width: calc(100% - 5em);
-  height: 100vh;
+  min-height: 100vh;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -713,7 +708,6 @@ body{
 }
 
 .formContainer {
-  width: 20%;
   margin: 1rem 0;
   border-radius: 8px;
   padding: 2em;
@@ -763,7 +757,7 @@ body{
 .formSubmitButton:hover {
   background-color: #ffffff;
   color: #212254;
-  border: 2px solid #212254;
+  outline: 2px solid #212254;
 }
 
 .formSelectContainer {
@@ -825,6 +819,15 @@ body{
 
 .formSmallInput {
   width: 100%;
+}
+
+.AccType {
+  display: flex;
+  gap: 2rem;
+}
+
+.type {
+  margin-right: .25rem;
 }
 
 /* Resource List Page */
@@ -957,6 +960,39 @@ body{
   justify-content: center;
   align-items: center;
   gap: .5rem;
+}
+
+/* Nav */
+
+.page {
+  display: flex;
+}
+#nav {
+  background-color: #212254;
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 150px;
+  max-width: 150px;
+  position: sticky;
+  flex-wrap: wrap;
+  top: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+#nav #newButton {
+  border-radius: 0;
+}
+
+#nav .background {
+  background-color: #212254;
+  padding: 1rem;
+  width: 100%;
+}
+
+
+.mainView {
+  flex-grow: 1;
 }
 
 /* For screens smaller than 768px (XS and SM devices) */
