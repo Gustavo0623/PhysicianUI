@@ -195,7 +195,7 @@ export const NewAccount = () => {
                     Sign Up
                 </button>
                 <p className="comLoginSubtext">
-                    Already have an account? <a href="./login">login</a>
+                    Already have an account? <a href="./login">Login</a>
                 </p>
             </form>
         </div>
