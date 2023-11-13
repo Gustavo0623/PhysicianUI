@@ -42,7 +42,7 @@ function NewPatient () {
             try {
         
                 // Make a PUT request to update the patient data
-                const response = await fetch("http://160.94.179.166:2270/", {
+                const response = await fetch("http://128.101.131.217:2270/", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

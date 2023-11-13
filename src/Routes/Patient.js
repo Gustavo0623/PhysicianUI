@@ -99,7 +99,7 @@ function Patient ({currentUser}) {
 
     async function fetchData() {
         try {
-            const url = 'http://160.94.179.166:2260/allResources';
+            const url = 'http://128.101.131.217:2260/allResources';
             const headers = new Headers();
             headers.append('Content-Type', 'application/json'); // You can add other headers if needed
         

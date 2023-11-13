@@ -14,7 +14,7 @@ function PatientList ({setCurrentUser, setEdit}) {
     // fetch patient data
     async function fetchData() {
         try {
-            const url = 'http://160.94.179.166:2270/allPatientData' 
+            const url = 'http://128.101.131.217:2270/allPatientData' 
             const headers = new Headers();
             headers.append('Content-Type', 'application/json'); // You can add other headers if needed
         
@@ -82,7 +82,7 @@ function PatientList ({setCurrentUser, setEdit}) {
                             </select>
                         </div>
                         {/* TODO: implement /newPatient route */}
-                        <a href={/*http://160.94.179.166:2270/questionnaire/index.html'*/ './newPatient'} id="newButton">New</a>
+                        <a href={/*http://128.101.131.217:2270/questionnaire/index.html'*/ './newPatient'} id="newButton">New</a>
                     </div>
                 </div>
 

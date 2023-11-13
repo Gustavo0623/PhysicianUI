@@ -92,7 +92,7 @@ function EditPage({currentUser}) {
                 try {
             
                     // Make a PUT request to update the patient data
-                    const response = await fetch("http://160.94.179.166:2270/updatePatient", {
+                    const response = await fetch("http://128.101.131.217:2270/updatePatient", {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json",

@@ -7,8 +7,8 @@ function Modify({currentUser, setUser, setEdit, fetchData}) {
 
         try {
             const MRNToDelete = currentUser.MRN;
-            // http://160.94.179.166/
-            const response = await fetch('http://160.94.179.166:2270/deletePatient', {
+            // http://128.101.131.217/
+            const response = await fetch('http://128.101.131.217:2270/deletePatient', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
