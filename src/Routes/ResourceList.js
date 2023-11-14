@@ -55,7 +55,7 @@ export const ResourceList = () => {
                 <h1 className="resourceHeader">Resource List</h1>
                 <div className="resourceListHeader">
                     <p className="resourceListCount">{filteredResources.length} results</p>
-                    <select name='filter' onChange={newFilterSelected} >
+                    <select className='filterSelect' name='filter' onChange={newFilterSelected} >
                         <option value="">No Filter</option>
                         <option value="M Health Fairview University of Minnesota Medical Center - West Bank">UM Medical Center West Bank</option>
                         <option value="Metro Transit Office">Metro Transit Office</option>
@@ -71,7 +71,6 @@ export const ResourceList = () => {
                         <p className="resourceListNameHeader">Name</p>
                         <p className="resourceListCategoryHeader">Category</p>
                         <p className="resourceListAddressHeader">Address</p>
-                        <p className="resourceListModifyHeader"></p>
                     </div>
                         {filteredResources.map((filteredResource, index) => (
                             <div className="resourceListRow" key={index}>

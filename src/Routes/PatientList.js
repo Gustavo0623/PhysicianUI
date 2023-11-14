@@ -72,7 +72,7 @@ function PatientList ({setCurrentUser, setEdit}) {
                     <div id='filterBox'>
                         <div id='select'>
                             <span id='dropdownArrow'></span>
-                            <select id="patientFilterSelect" className={selectedOption === '' ? 'filter' : null} value={selectedOption} onChange={handleOptionChange}>
+                            <select className={selectedOption === '' ? 'filter filterSelect' : 'filterSelect'} value={selectedOption} onChange={handleOptionChange}>
                                 <option value="" disabled hidden>
                                 Filter
                                 </option>

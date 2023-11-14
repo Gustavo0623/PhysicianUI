@@ -251,7 +251,7 @@ body{
   flex-basis: 300px;
   border-radius: 6px;
 }
-#patientFilterSelect{
+.filterSelect{
   appearance: none;
   border: none;
   width: 100%;
@@ -265,7 +265,7 @@ body{
   border: none;
   text-decoration: none;
   text-align: center;
-  padding: .5em 0;
+  padding: .25rem 0;
   border-radius: 6px;
   font-size: 16px;
   font-weight: bold;
@@ -294,8 +294,7 @@ body{
 }
 #riskText{	
   text-align: left;
-  flex: 5;
-  flex-basis: calc(96px);
+  flex: 5 1 96px;
 }
 .returnBox {
   width: 100%
@@ -747,7 +746,7 @@ body{
   border: none;
   text-decoration: none;
   text-align: center;
-  padding: .5em 0;
+  padding: .25rem 0;
   border-radius: 6px;
   flex-grow: 1;
   flex-basis: 100px;
@@ -756,7 +755,6 @@ body{
   background-color: #212254;
   color: #FFFFFF;
   cursor: pointer;
-  border: 2px solid #212254;
 }
 
 .formSubmitButton:hover {
@@ -841,6 +839,14 @@ body{
   min-height: 98vh;
 }
 
+.newResource .filterSelect {
+  width: auto;
+  height: 32px;
+  flex: 2 1 300px;
+  color: #6c6a72;
+  border: 1.5px solid #f0f0f2;
+}
+
 .resourceHeader {
   width: calc(100% - 5rem);
   margin: 2rem auto .5rem;
@@ -853,7 +859,7 @@ body{
   width: calc(100% - 5em);
   margin: .5rem auto;
   justify-content: space-between;
-  gap: .5rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -909,7 +915,7 @@ body{
 
 .resourceListAddressHeader {
   text-align: left;
-  flex: 5 1;
+  flex: 5 1 96px;
   min-width: 212px;
 }
 
