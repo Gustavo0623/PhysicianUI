@@ -295,7 +295,7 @@ body{
 #riskText{	
   text-align: left;
   flex: 5;
-  min-width: 212px;
+  flex-basis: calc(96px);
 }
 .returnBox {
   width: 100%
