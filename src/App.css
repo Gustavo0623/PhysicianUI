@@ -934,6 +934,10 @@ body{
   border-bottom: 2px solid #f9f9fa;
 }
 
+.resourceListRow:last-child {
+  border-bottom: none;
+}
+
 .resourceListContent {
   display: flex;
   flex-direction: row;
