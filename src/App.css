@@ -261,14 +261,12 @@ body{
 }
 
 
-#newButton{	
+#newButton, .navBtn{	
   border: none;
   text-decoration: none;
   text-align: center;
   padding: .5em 0;
   border-radius: 6px;
-  flex-grow: 1;
-  flex-basis: 100px;
   font-size: 16px;
   font-weight: bold;
   background-color: #212254;
@@ -276,7 +274,12 @@ body{
   cursor: pointer;
 }
 
-#newButton:hover {
+#newButton {
+  flex-grow: 1;
+  flex-basis: 100px;
+}
+
+#newButton:hover, .navBtn:hover{
   background-color: #FFFFFF;
   color: #212254;
   outline: 2px solid #212254
@@ -969,6 +972,8 @@ body{
 .page {
   display: flex;
 }
+
+
 #nav {
   background-color: #212254;
   min-height: 100vh;
@@ -976,14 +981,18 @@ body{
   min-width: 150px;
   max-width: 150px;
   position: sticky;
-  flex-wrap: wrap;
   top: 0;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 1rem;
+  outline: 2px solid #212254;
 }
 
-#nav #newButton {
+#nav .navBtn, .navBtn:hover {
   border-radius: 0;
+  outline: none;
 }
 
 #nav .background {

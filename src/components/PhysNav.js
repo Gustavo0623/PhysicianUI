@@ -8,10 +8,8 @@ const Nav = ({url}) => {
                 <img src={ url ? url : "./images/vertex-updated-logo.webp"} alt="Logo" id="Logo"/>
             </span>
             {/* options to be changed with buttons that manage the state of the view or reroutes to a different view page */}
-            <a id='newButton' href="/patients">Patients</a>
-            <a id='newButton' href="/resourceList">Resources</a>
-            <button id='newButton'>TBD</button>
-            <button id='newButton'>TBD</button>
+            <a className='navBtn' href="/patients">Patients</a>
+            <a className='navBtn' href="/resourceList">Resources</a>
         </aside>
     )
 }
