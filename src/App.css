@@ -147,7 +147,7 @@ body{
 
 .patientPage {
   padding: 0 2.5rem;
-  width: calc(100% - 5em);
+  flex: 1;
 }
 
 .titleBox {
