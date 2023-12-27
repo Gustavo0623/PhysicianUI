@@ -1049,3 +1049,117 @@ body{
   }
 
 }
+
+/* Upload Resources */
+
+.customization-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.resource-container {
+  width: 700px;
+  height: 500px;
+  border: 1px solid #DEE2E6;
+  background: #FFF;
+}
+
+.resource-container h1 {
+  text-align: center;
+  color: #000;
+  font-family: Segoe UI;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 36px;
+}
+
+.rows-container {
+  margin: 50px 108px;
+  width: 100%;
+}
+
+.circle-row {
+  display: flex;
+  gap: 59px;
+}
+
+.top {
+  margin-bottom: 67px;
+}
+
+.circle-button {
+  height: 77px;
+  width: 77px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #DEE2E6;
+}
+
+.circle-icon-substance {
+  width: 40.512px;
+  height: 49px;
+}
+
+.circle-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px; 
+}
+
+.circle-icon-label {
+  position: absolute;
+  bottom: -23px; 
+  text-align: center;
+  white-space: nowrap;
+  color: #6B707B;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.progress-bar {
+  width: 485px;
+  height: 37px;
+  border-radius: 20px;
+  background: #212254;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  border: none;
+  padding: 0;
+  position: relative; 
+  overflow: hidden; 
+}
+
+.fill-effect {
+  background-color: #729CE6;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: width 0.5s ease;
+}
+
+.progress-bar-label {
+  text-align: right;
+  color: #FFF;
+  font-family: Segoe UI;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0 12px 4px 0;
+  z-index: 1; 
+}
+
+.progress-bar-arrow {
+  padding-right: 19px;
+  z-index: 1; 
+}

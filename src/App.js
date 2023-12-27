@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
-import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Navigate}  from 'react-router-dom'
 import Patient from './Routes/Patient';
 import PatientList from './Routes/PatientList';
 import EditPage from './Routes/EditPatient';
@@ -11,6 +11,8 @@ import ComAccCreate from './Routes/ComAccCreate'
 import { NewAccount } from './Routes/NewAccount';
 import NewResource from './Routes/NewResource'
 import ResourceList from './Routes/ResourceList'
+import UploadResources from './Routes/UploadResources';
+import StandarizedAssessments from './Routes/StandarizedAssessments';
 
 function App() {
 
@@ -37,6 +39,8 @@ function App() {
           <Route exact path='/resourceList' element={ <ResourceList/> }></Route>
           <Route exact path='/login' element={ <Login/> }></Route>
           <Route exact path='/signup' element={ <NewAccount/> }></Route>
+          <Route exact path='/uploadresources' element={ <UploadResources/> }></Route>
+          <Route exact path='/standarizedassessments' element={ <StandarizedAssessments/> }></Route>
         </Routes>
       </BrowserRouter>
     </div>
