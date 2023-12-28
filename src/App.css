@@ -1163,3 +1163,85 @@ body{
   padding-right: 19px;
   z-index: 1; 
 }
+
+/* Trauma Informed Toolbox */
+.trauma-resource-container {
+  width: 700px;
+  height: 600px;
+  border: 1px solid #DEE2E6;
+  background: #FFF;
+}
+
+.trauma-resource-container h1 {
+  text-align: center;
+  color: #000;
+  font-family: Segoe UI;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 36px;
+}
+.trauma-content-container {
+  width: 485px;
+  margin: 0 auto;
+}
+
+.trauma-subheading {
+  color: #6B707B;
+  text-align: center;
+  font-family: Segoe UI;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.trauma-divider {
+  width: 485.008px;
+  height: 1px;
+  background: #DEE2E6;
+  margin: 10px auto;
+}
+
+.trauma-h2 {
+  color: #000;
+  text-align: left;
+  font-family: Segoe UI;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.trauma-h2-subheading {
+  color: #6B707B;
+  font-family: Segoe UI;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  margin-top: 6px;
+  padding: 0;
+}
+
+.trauma-add-button {
+  width: 50px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #212254;
+  border: none;
+  margin: 0;
+  margin-top: 6px;
+  padding: 0;
+  color: #FFF;
+  font-family: Segoe UI;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}

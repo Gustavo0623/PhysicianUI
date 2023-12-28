@@ -13,6 +13,7 @@ import NewResource from './Routes/NewResource'
 import ResourceList from './Routes/ResourceList'
 import UploadResources from './Routes/UploadResources';
 import StandarizedAssessments from './Routes/StandarizedAssessments';
+import TraumaInformedTools from './Routes/TraumaInformedTools';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
           <Route exact path='/signup' element={ <NewAccount/> }></Route>
           <Route exact path='/uploadresources' element={ <UploadResources/> }></Route>
           <Route exact path='/standarizedassessments' element={ <StandarizedAssessments/> }></Route>
+          <Route exact path='/traumainformedtools' element={ <TraumaInformedTools/> }></Route>
         </Routes>
       </BrowserRouter>
     </div>

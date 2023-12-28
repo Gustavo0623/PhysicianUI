@@ -9,7 +9,7 @@ export default function StandarizedAssessments() {
     function handleClick() {
         setIsFilling(true)
         setTimeout(() => {
-            navigate('/standarizedassessments')
+            navigate('/traumainformedtools')
             setIsFilling(false); 
           }, 500);
     }   
